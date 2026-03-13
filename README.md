@@ -8,7 +8,7 @@
 
 Coaching youth basketball while working a full-time job is a scheduling puzzle that never fully resolves.
 
-You get to the gym with 45 minutes before practice starts — sometimes less. You need to fill an hour, maybe an hour and a half, with drills that are appropriate for the age group, actually teachable in the time you have, and flexible enough to work whether 8 kids show up or 12. You don't always know which until they walk in the door.
+You get to the gym with 15 minutes before practice starts — sometimes less. You need to fill an hour, maybe an hour and a half, with drills that are appropriate for the age group, actually teachable in the time you have, and flexible enough to work whether 8 kids show up or 12. You don't always know which until they walk in the door.
 
 The drills exist. They're scattered across YouTube videos, coaching websites, old notebooks, and things you half-remember from a clinic three years ago. Finding the right one fast — filtered by what you're working on, how many players you have, and what skill level makes sense today — isn't easy when you're standing in a gym parking lot trying to throw together a practice plan.
 
