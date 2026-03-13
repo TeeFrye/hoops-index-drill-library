@@ -4,17 +4,34 @@
 
 ---
 
-## What this is
+## The problem
 
-A personal coaching tool and shareable resource for youth basketball coaches. Browse, filter, and search 47 practice drills organized by focus area, age group, skill level, and player count. Includes an AI-powered drill generator that creates custom drills based on what you need.
+Coaching youth basketball while working a full-time job is a scheduling puzzle that never fully resolves.
 
-Built for my own use coaching youth basketball — shared publicly because every coach should have access to a clean, organized drill library.
+You get to the gym with 45 minutes before practice starts — sometimes less. You need to fill an hour, maybe an hour and a half, with drills that are appropriate for the age group, actually teachable in the time you have, and flexible enough to work whether 8 kids show up or 12. You don't always know which until they walk in the door.
+
+The drills exist. They're scattered across YouTube videos, coaching websites, old notebooks, and things you half-remember from a clinic three years ago. Finding the right one fast — filtered by what you're working on, how many players you have, and what skill level makes sense today — isn't easy when you're standing in a gym parking lot trying to throw together a practice plan.
+
+That's the problem this is trying to solve.
+
+**Hoops Index - Drill Library is a drill index built for the sideline, not the desk.** A fast, filterable, mobile-friendly reference that a coach can pull up between warmups and actually use.
+
+---
+
+## What it does
+
+- **47 youth basketball drills** organized by focus area, age group, skill level, and player count
+- **Filter by player count** — because knowing you have 9 kids tonight changes everything
+- **Search by name** for drills you already know
+- **Favorites** — star your go-to drills and pull them up instantly
+- **AI Drill Generator** — describe what you need and get a custom drill on the spot
+- Works on your phone, in the gym, with no login required
 
 ---
 
 ## Drill library
 
-**47 drills** across 7 focus areas:
+**Focus areas:**
 
 | Focus | Count |
 |---|---|
@@ -26,20 +43,22 @@ Built for my own use coaching youth basketball — shared publicly because every
 | Team Concepts | 5 |
 | Conditioning | 1 |
 
-**Age groups covered:** U8–U10 · U10–U12 · U12–U14 · U14+
+**Age groups:** U8–U10 · U10–U12 · U12–U14 · U14+
 
-**Sources:** Drills are based on content from [Breakthrough Basketball](https://www.breakthroughbasketball.com), Pro Skills Basketball, and Basketball for Coaches — cross-referenced against what coaches actually use at the youth level. Staples like the Mikan Drill, Shell Drill, 3-Man Weave, and Form Shooting are in here alongside less obvious drills like Kill the Grass, Red Light Green Light, and Score for Stops.
+**Sources:** Drills are based on content from [Breakthrough Basketball](https://www.breakthroughbasketball.com) and Pro Skills Basketball — cross-referenced against what coaches actually use at the youth level. Staples like the Mikan Drill, Shell Drill, and Form Shooting sit alongside drills like Kill the Grass, Score for Stops, and Red Light Green Light.
 
 ---
 
-## Features
+## Phase 2 (future)
 
-- **Filter** by focus, age group, skill level, and player count
-- **Search** by drill name
-- **Favorites** — star any drill and access them in the Saved tab
-- **AI Drill Generator** — describe what you need and get a custom drill built on the spot (uses Claude API)
-- **Dark / Light mode** toggle
-- Drill detail view with setup, steps, coaching cues, and variations
+This version is a solid starting point. Here's where I'd like to take it:
+
+- **Expand the drill library** by sourcing more content from vetted coaching resources and organizing it into a proper database
+- **Connect a backend** so the drill library can grow continuously without requiring code changes
+- **Practice plan builder** — input your time, player count, and focus areas and get a full practice plan generated automatically
+- **API key management** so the AI drill generator works for anyone without exposing credentials
+
+Whether or not I get to all of this, the current version solves the immediate problem.
 
 ---
 
@@ -58,7 +77,6 @@ Built for my own use coaching youth basketball — shared publicly because every
 All drills live in `drills.json`. To add a drill, copy any existing drill object, assign a new unique `id`, edit the fields, and commit. No code changes needed.
 
 **Schema:**
-
 ```json
 {
   "id": 48,
@@ -79,7 +97,6 @@ All drills live in `drills.json`. To add a drill, copy any existing drill object
 ---
 
 ## File structure
-
 ```
 hoops-index-drill-library/
 ├── index.html    ← the entire app
