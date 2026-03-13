@@ -88,9 +88,3 @@ hoops-index-drill-library/
 ```
 
 ---
-
-## Credits
-
-Built with [Claude](https://claude.ai) by Anthropic · Hosted on [GitHub Pages](https://pages.github.com)
-
-Part of a larger project: building a public portfolio of AI-powered tools at [github.com/TeeFrye](https://github.com/TeeFrye)
