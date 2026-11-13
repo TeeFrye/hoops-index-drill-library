@@ -38,8 +38,10 @@
   --stripes: repeating-linear-gradient(90deg, var(--crimson) 0 9px, var(--cream-stripe) 9px 18px);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --tabbar-h: 58px;
-  --tabbar-space: calc(var(--tabbar-h) + var(--safe-bottom));
+  --tabbar-h: 50px;
+  /* Overlap the home-indicator zone a little (common iOS pattern) so the bar isn't taller than a native one. */
+  --tabbar-pad: max(calc(var(--safe-bottom) - 14px), 6px);
+  --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-pad));
   color-scheme: light;
 }
 
@@ -175,14 +177,14 @@ h1, h2, h3 { margin: 0; }
 /* ---------- Tab bar (docked to the bottom edge) ---------- */
 .tabbar {
   position: absolute; z-index: 20; left: 0; right: 0; bottom: 0;
-  height: var(--tabbar-space); padding-bottom: var(--safe-bottom);
+  height: var(--tabbar-space); padding-bottom: var(--tabbar-pad);
   background: var(--hero);
   box-shadow: 0 -6px 18px -10px rgba(60, 0, 0, 0.45);
   display: grid; grid-template-columns: repeat(4, 1fr);
 }
 .tab {
   position: relative; height: var(--tabbar-h);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
   color: rgba(251, 246, 238, 0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.01em;
   transition: color 0.2s;
 }
