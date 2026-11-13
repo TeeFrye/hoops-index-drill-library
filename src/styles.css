@@ -38,9 +38,8 @@
   --stripes: repeating-linear-gradient(90deg, var(--crimson) 0 9px, var(--cream-stripe) 9px 18px);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --tabbar-h: 64px;
-  --tabbar-gap: 10px;
-  --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-gap) + max(var(--safe-bottom), 8px));
+  --tabbar-h: 58px;
+  --tabbar-space: calc(var(--tabbar-h) + var(--safe-bottom));
   color-scheme: light;
 }
 
@@ -123,11 +122,11 @@ h1, h2, h3 { margin: 0; }
 .scroll {
   flex: 1; overflow-y: auto; overflow-x: hidden; position: relative;
   -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain;
-  padding-bottom: calc(var(--tabbar-space) + 20px);
+  padding-bottom: calc(var(--tabbar-space) + 16px);
   /* crimson behind the top so pull-down overscroll never shows a seam */
   background: linear-gradient(var(--hero) 0 50%, var(--bg) 50%) top / 100% 400px no-repeat, var(--bg);
 }
-.has-action-bar .scroll { padding-bottom: calc(var(--tabbar-space) + 92px); }
+.has-action-bar .scroll { padding-bottom: calc(var(--tabbar-space) + 88px); }
 
 /* ---------- Nav bar (floats over the crimson hero) ---------- */
 .navbar {
@@ -173,23 +172,28 @@ h1, h2, h3 { margin: 0; }
 .display-sub { margin-top: 8px; font-size: 15px; opacity: 0.8; max-width: 34ch; }
 .kicker { font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; }
 
-/* ---------- Floating tab bar ---------- */
+/* ---------- Tab bar (docked to the bottom edge) ---------- */
 .tabbar {
-  position: absolute; z-index: 20;
-  left: 14px; right: 14px; bottom: max(var(--safe-bottom), 8px); margin-bottom: var(--tabbar-gap);
-  height: var(--tabbar-h); border-radius: 26px; padding: 6px;
-  background: var(--bar);
-  -webkit-backdrop-filter: saturate(180%) blur(24px); backdrop-filter: saturate(180%) blur(24px);
-  box-shadow: 0 0 0 0.5px var(--sep), 0 12px 32px -10px rgba(40, 10, 5, 0.35);
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  position: absolute; z-index: 20; left: 0; right: 0; bottom: 0;
+  height: var(--tabbar-space); padding-bottom: var(--safe-bottom);
+  background: var(--hero);
+  box-shadow: 0 -6px 18px -10px rgba(60, 0, 0, 0.45);
+  display: grid; grid-template-columns: repeat(4, 1fr);
 }
 .tab {
-  border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  color: var(--label-2); font-size: 11px; font-weight: 600; letter-spacing: 0.01em;
-  transition: background 0.2s, color 0.2s, transform 0.12s;
+  position: relative; height: var(--tabbar-h);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  color: rgba(251, 246, 238, 0.6); font-size: 11px; font-weight: 600; letter-spacing: 0.01em;
+  transition: color 0.2s;
 }
-.tab.active { color: var(--accent); background: var(--accent-soft); }
-.tab:active { transform: scale(0.94); }
+.tab::before { /* crimson stripe over the active tab */
+  content: ""; position: absolute; top: -0.5px; left: 28%; right: 28%; height: 3px; border-radius: 0 0 3px 3px;
+  background: var(--hero-ink); transform: scaleX(0); transition: transform 0.25s cubic-bezier(.2,.9,.25,1);
+}
+.tab.active { color: var(--hero-ink); }
+.tab.active::before { transform: scaleX(1); }
+.tab:active svg { transform: scale(0.9); }
+.tab svg { transition: transform 0.12s; }
 
 /* ---------- Search ---------- */
 .toolbar { display: flex; gap: 10px; padding: 16px 16px 4px; }
