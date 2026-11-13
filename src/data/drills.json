@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Mikan Drill",
-      "focus": "Shooting",
+      "focus": "Finishing",
       "ageGroup": "U8–U10",
       "skill": "Beginner",
       "duration": 8,
@@ -52,6 +52,9 @@
         "One high, one low: one ball at waist height, one ball at knee height.",
         "Crossover series: cross both balls at the same time, then alternate.",
         "Two-ball figure-8 through the legs for advanced players."
+      ],
+      "equipment": [
+        "2 basketballs per player"
       ]
     },
     {
@@ -160,6 +163,10 @@
         "Timed: how fast can each player complete the course without losing the ball?",
         "Add a finish: last cone leads into a layup at the basket.",
         "Zigzag course instead of straight line — forces more acute change-of-direction."
+      ],
+      "equipment": [
+        "Basketballs",
+        "6 cones"
       ]
     },
     {
@@ -295,7 +302,8 @@
         "Expand to 2v2 with a help-side defender.",
         "Shooter's bonus: offense scores 2 points for made shots off a bad closeout.",
         "Add a shot fake — defender must not leave their feet."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 12,
@@ -408,7 +416,7 @@
     {
       "id": 16,
       "name": "Full-Court Layup Lines",
-      "focus": "Shooting",
+      "focus": "Finishing",
       "ageGroup": "U8–U10",
       "skill": "Beginner",
       "duration": 8,
@@ -457,7 +465,9 @@
         "Two balls: each player dribbles two balls at once. Nearly impossible and extremely fun.",
         "Off hand only: dribble with the weak hand the entire time.",
         "Predator: the tagged player becomes an additional tagger. Last player standing wins."
-      ]
+      ],
+      "maxAge": "U10–U12",
+      "competitive": true
     },
     {
       "id": 18,
@@ -484,7 +494,8 @@
         "Add a trailer: a 4th offensive player who fills the lane 2 steps behind the break.",
         "Limit to 1 dribble per possession — forces quicker passing decisions.",
         "Scoring: fast break baskets count 2, half-court baskets count 1."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 19,
@@ -511,7 +522,8 @@
         "Bank shot rule: every shot must use the backboard — great for teaching bank angles.",
         "Off hand: complete the circuit shooting with the weak hand only.",
         "Add mid-range spots inside the arc for younger players who can't reach the 3-point line."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 20,
@@ -538,7 +550,8 @@
         "Weak hand only: all passes must be made and caught with the non-dominant hand.",
         "Two middles: two players in the middle create two simultaneous passing lanes.",
         "Add a defender in the lane who tries to tip passes — now the passer must read the window."
-      ]
+      ],
+      "maxAge": "U10–U12"
     },
     {
       "id": 21,
@@ -597,7 +610,7 @@
     {
       "id": 23,
       "name": "Box-Out Battle",
-      "focus": "Defense",
+      "focus": "Rebounding",
       "ageGroup": "U12–U14",
       "skill": "Intermediate",
       "duration": 10,
@@ -619,7 +632,8 @@
         "2-on-2 box-out: two rebounders vs two offensive players — introduces traffic and screening.",
         "Tip drill: instead of catching the rebound, tip it to a teammate three times before securing.",
         "Outlet pass: after securing the rebound, immediately make a crisp outlet to a waiting guard."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 24,
@@ -646,6 +660,12 @@
         "Off hand only: entire relay completed with the weak hand — no crossover allowed.",
         "Add a figure-8 around two cones at half court before returning.",
         "Individual time trial: no teams, each player races the clock instead."
+      ],
+      "maxAge": "U10–U12",
+      "competitive": true,
+      "equipment": [
+        "Basketballs",
+        "Cone"
       ]
     },
     {
@@ -673,7 +693,8 @@
         "Add a shot clock (15 seconds) — forces quicker decision-making.",
         "Limit dribbles per player per possession to 3 — forces movement and passing.",
         "Winners-stay format with a 3-win cap — everyone cycles through."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 26,
@@ -700,7 +721,8 @@
         "Multiple shooters: coach randomizes which shooter receives the pass — tests peripheral vision.",
         "Add a pass fake: coach fakes a pass to test if the defender bites.",
         "2v2 reaction: two defenders face away, two shooters attack simultaneously."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 27,
@@ -727,7 +749,8 @@
         "Raise the stakes: pro needs 7 to win, player still needs 10. Creates real pressure.",
         "Two-ball: passer fires balls in quick succession — no rest between shots.",
         "Full-game version: play to 21, alternating shot types (catch-and-shoot, off the dribble)."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 28,
@@ -781,7 +804,8 @@
         "One-dribble limit: forces constant motion and quick decision-making.",
         "Make-it-take-it: scoring team keeps possession — rewards efficiency.",
         "Alternate ball possession after each score — equalizes possessions and makes defense matter more."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 30,
@@ -808,6 +832,9 @@
         "Competitive: last player to touch each line does 5 push-ups.",
         "Ball in hand: each player dribbles during the sprint — adds coordination under fatigue.",
         "Defensive shuffle on the return legs — sprint there, slide back."
+      ],
+      "equipment": [
+        "4 cones"
       ]
     },
     {
@@ -862,6 +889,10 @@
         "Low dribble: aim below knee height on the wall — forces a tighter, more controlled touch.",
         "Alternating hands: 10 reps left, 10 reps right, 10 reps left. No stopping between transitions.",
         "Eyes closed: once the rhythm is locked in, close your eyes and dribble by feel for 15 seconds."
+      ],
+      "equipment": [
+        "Basketballs",
+        "Wall"
       ]
     },
     {
@@ -916,7 +947,8 @@
         "Full live 1v1: no restrictions on the defender after the catch.",
         "Three-shot rule: make 3 contested shots in a row before rotating to a new spot.",
         "Off the dribble: player receives the pass, takes one dribble to create separation, then shoots."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 35,
@@ -944,8 +976,7 @@
         "Live possession after entry: once the ball is caught, play live 2-on-2.",
         "Post denial: move the drill to the low block — teach fronting the post rather than wing denial."
       ]
-    }
-    ,
+    },
     {
       "id": 36,
       "name": "Kill the Grass",
@@ -971,7 +1002,8 @@
         "Two-ball Kill the Grass: both hands pounding simultaneously.",
         "Move while dribbling: walk around the half court without looking at the ball.",
         "Coach calls 'freeze' — every player stops dribbling and holds their stance. Check posture."
-      ]
+      ],
+      "maxAge": "U10–U12"
     },
     {
       "id": 37,
@@ -998,7 +1030,8 @@
         "No ball: run the drill without a basketball first to teach the jump stop in isolation.",
         "Add 'Yellow light': slow dribble only — tests speed control between full speed and a stop.",
         "Triple threat on red light: players must land in triple threat position when stopped."
-      ]
+      ],
+      "maxAge": "U10–U12"
     },
     {
       "id": 38,
@@ -1052,6 +1085,10 @@
         "Dominant hand only: one-handed passes into the wall to build arm strength and control.",
         "Move closer to the wall for quicker reaction reps — great for hand speed.",
         "Add pass fakes: fake high, throw low. Fake left, throw right. The wall is the receiver."
+      ],
+      "equipment": [
+        "Basketballs",
+        "Wall"
       ]
     },
     {
@@ -1079,12 +1116,14 @@
         "Tighten the space: move passers closer together — harder to throw past the defender.",
         "Two defenders: now both outside players must really work to connect.",
         "No bounce passes: chest and overhead only — forces more deliberate fakes."
-      ]
+      ],
+      "maxAge": "U10–U12",
+      "competitive": true
     },
     {
       "id": 41,
       "name": "Chase Down Layups",
-      "focus": "Shooting",
+      "focus": "Finishing",
       "ageGroup": "U10–U12",
       "skill": "Beginner",
       "duration": 10,
@@ -1106,7 +1145,8 @@
         "Left hand only: all finishes with the non-dominant hand.",
         "Reverse layup: offense must use the backboard from the opposite angle.",
         "Add a passer: offense receives a pass at the free-throw line before the defender starts — tests catch-and-attack."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 42,
@@ -1133,6 +1173,10 @@
         "Choose your move at each cone — don't predetermine. Reacts to a coach's call.",
         "Add a live defender at the last cone — player attacks 1v1 off the final move.",
         "Time it: same course, same moves — beat your previous time at phase 1."
+      ],
+      "equipment": [
+        "Basketballs",
+        "3 cones"
       ]
     },
     {
@@ -1160,7 +1204,8 @@
         "3-on-3: more decisions, more communication required.",
         "Bonus points: a charge drawn = 2 points. A block without a foul = 2 points.",
         "Live from a closeout: defense starts under the basket, passes to offense, and closes out — starts game-like."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 44,
@@ -1214,7 +1259,8 @@
         "1-dribble limit: each player gets exactly one dribble per possession — forces deliberate use.",
         "Full court no dribble: play ends at half court, ball goes back. Forces press-break thinking.",
         "Scoring: each basket in no-dribble mode = 2 points. Each made basket with 1 dribble = 1 point."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 46,
@@ -1241,7 +1287,8 @@
         "Random assignment: coach calls a player's name as they throw the pass — that player's defender has to sprint farther.",
         "Offense gets 2 points for a shot made off a bad closeout — creates accountability.",
         "Expand to 4v4 or 5v5 from a closeout for a more complete team defense rep."
-      ]
+      ],
+      "competitive": true
     },
     {
       "id": 47,
@@ -1268,6 +1315,1881 @@
         "Add a live defender who guesses which threat is coming — offense must read and react.",
         "Partner version: one player in triple threat, one calls 'shoot', 'drive', or 'pass' — player reacts.",
         "Time it: how many full triple threat sequences (catch, fake, jab, attack) in 60 seconds?"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Dynamic Warm-Up Lines",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Players in 3–4 lines on the baseline. Each movement goes to the free-throw line extended and back at a jog.",
+      "steps": [
+        "High knees to the free-throw line, jog back.",
+        "Butt kicks out, jog back.",
+        "Lunge walk with a twist toward the front knee.",
+        "Side shuffle out facing one sideline, back facing the other.",
+        "Carioca out and back.",
+        "Finish with two build-up sprints at 50% then 80%."
+      ],
+      "cues": [
+        "Arms move with the legs — no floppy arms.",
+        "Stay on the balls of your feet.",
+        "Talk to the next line: 'Go!' when you reach the line."
+      ],
+      "variations": [
+        "Add a ball and do every movement while holding it overhead.",
+        "Make the last sprint a race between lines."
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Partner Ball-Slap Warm-Up",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 5,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "competitive": true,
+      "setup": "Partners face each other in a defensive stance, about 3 feet apart. No ball.",
+      "steps": [
+        "On 'go', each player tries to tap the other's knees while protecting their own.",
+        "Play 20-second rounds, keep score in your head.",
+        "Switch partners after every round.",
+        "Finish with 10 seconds of quick feet in place."
+      ],
+      "cues": [
+        "Low hips — if you stand up, you get tagged.",
+        "Use your hands to protect, not just your feet.",
+        "Short, quick steps. Never cross your feet."
+      ],
+      "variations": [
+        "Shoulder-tag version for older players.",
+        "Tag the partner's ankles — forces players even lower."
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Ball Slaps & Wraps",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 5,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Every player has a ball and their own space on the court.",
+      "steps": [
+        "Ball slaps: slap the ball hard between hands 10 times.",
+        "Fingertip taps: tap the ball between hands from overhead to the knees and back up.",
+        "Wraps around the head, then waist, then each knee — 5 each way.",
+        "Figure-8 through the legs, 5 each way.",
+        "Drop and catch: hold the ball between the legs, one hand in front and one behind, switch hands before it bounces."
+      ],
+      "cues": [
+        "Fingertips, not palms.",
+        "Eyes up — find the coach while the ball moves.",
+        "Go faster each round, but don't drop it."
+      ],
+      "variations": [
+        "Count total wraps in 30 seconds and try to beat it.",
+        "Do the whole routine with eyes closed."
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Partner Passing Warm-Up",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Partners 10–12 feet apart along the sideline, one ball per pair.",
+      "steps": [
+        "10 two-hand chest passes each.",
+        "10 bounce passes each.",
+        "10 overhead passes each.",
+        "10 one-hand push passes with each hand.",
+        "Finish with 30 seconds of fast chest passes — count them."
+      ],
+      "cues": [
+        "Step toward your partner on every pass.",
+        "Thumbs down on the follow-through.",
+        "Show a target with two hands — 'ball, ball!'"
+      ],
+      "variations": [
+        "Take a step back after every 5 passes.",
+        "Add a slide step — pass while both partners shuffle down the sideline."
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Layup Line Warm-Up",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 7,
+      "minPlayers": 4,
+      "maxPlayers": 30,
+      "setup": "Two lines at the elbows: a shooting line with balls on the right, a rebounding line on the left.",
+      "steps": [
+        "Shooter drives and makes a right-hand layup.",
+        "Rebounder grabs it and passes to the front of the shooting line.",
+        "Players switch lines after each rep.",
+        "After 2 minutes, flip to the left side for left-hand layups.",
+        "Finish with a 'make 10 in a row' team challenge."
+      ],
+      "cues": [
+        "Hand that's away from the defender shoots.",
+        "Aim high on the backboard square.",
+        "Rebound before it hits the floor."
+      ],
+      "variations": [
+        "Add a jump stop before every layup.",
+        "Shooter uses a hesitation dribble at the free-throw line."
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Shadow Defense Warm-Up",
+      "focus": "Warm-Up",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 5,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Players in a defensive stance facing the coach in scattered spots.",
+      "steps": [
+        "Coach points left or right — players slide that way.",
+        "Coach points forward — players sprint 3 steps forward then backpedal.",
+        "Coach shoots a pretend shot — players jump with hands high and yell 'Shot!'",
+        "Coach claps — players drop and do a quick fake charge.",
+        "Go for 45 seconds, rest 15, repeat 3 times."
+      ],
+      "cues": [
+        "Never stand straight up.",
+        "Eyes on the coach the whole time.",
+        "Talk on every rep."
+      ],
+      "variations": [
+        "Let a player be the coach.",
+        "Add a dribbler instead of pointing."
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Tip Drill Warm-Up",
+      "focus": "Warm-Up",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 5,
+      "minPlayers": 3,
+      "maxPlayers": 12,
+      "setup": "One line on the right side of the rim, slightly off the backboard. First player has a ball.",
+      "steps": [
+        "First player tosses the ball softly off the backboard.",
+        "Players run through, jump, and tap the ball back off the glass with one hand, then go to the back.",
+        "Keep the ball alive for as many touches as possible.",
+        "Switch to the left side after 2 minutes."
+      ],
+      "cues": [
+        "Two hands up at the top of the jump.",
+        "Jump and land in balance.",
+        "Soft tip — don't slap it."
+      ],
+      "variations": [
+        "Score the last tip into the basket.",
+        "Two-hand catch and power put-back on the last touch."
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Full-Court Jog & Handle",
+      "focus": "Warm-Up",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Players on the baseline with a ball each, spread across the width of the court.",
+      "steps": [
+        "Dribble at a jog to the far baseline with the right hand.",
+        "Come back with the left hand.",
+        "Next length: switch hands at every line.",
+        "Next length: crossover at every line.",
+        "Last length: speed dribble to half court, control dribble the rest."
+      ],
+      "cues": [
+        "Ball out in front when you speed up.",
+        "Eyes up — you should be able to read the scoreboard.",
+        "Change hands with a low, quick bounce."
+      ],
+      "variations": [
+        "Coach holds up fingers — players call out the number.",
+        "Add a jump stop and pivot at each line."
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Two-Line Layups with Jump Stop",
+      "focus": "Finishing",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 4,
+      "maxPlayers": 20,
+      "setup": "Two lines at the wings. Each player in the right line has a ball.",
+      "steps": [
+        "Ball line dribbles to the block and makes a two-foot jump stop.",
+        "Pivot to protect the ball, then go up with two hands off the glass.",
+        "Rebound line grabs the ball and passes back.",
+        "Switch lines after each rep; switch sides after 2 minutes."
+      ],
+      "cues": [
+        "Land on both feet at the same time — balanced.",
+        "Keep the ball tight to your chin.",
+        "Go up strong, not out."
+      ],
+      "variations": [
+        "Add a pump fake after the jump stop.",
+        "Coach holds a pad to give light contact."
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Power Layups vs. Pad",
+      "focus": "Finishing",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "equipment": [
+        "Basketballs",
+        "Blocking pad"
+      ],
+      "setup": "Player at the block with a ball. Coach or teammate stands under the rim with a blocking pad.",
+      "steps": [
+        "Player takes one power dribble toward the rim.",
+        "Jump stop with shoulders square to the baseline.",
+        "Coach bumps with the pad as the player goes up.",
+        "Finish through the contact off the glass.",
+        "5 reps each side, then rotate."
+      ],
+      "cues": [
+        "Chin the ball — two hands, elbows out.",
+        "Jump into the contact, not away from it.",
+        "Finish high off the square."
+      ],
+      "variations": [
+        "Add a 'chair' defender — player must use an up-and-under.",
+        "Score and-one style: make the free throw after each finish."
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Euro Step Progression",
+      "focus": "Finishing",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "equipment": [
+        "Basketballs",
+        "Cone or chair"
+      ],
+      "setup": "Cone at the free-throw line. Players start at half court with a ball.",
+      "steps": [
+        "Walk-through: gather at the cone, step left, then long step right and finish.",
+        "Repeat at half speed with a dribble approach.",
+        "Full speed from half court.",
+        "Mirror it: step right first, then left.",
+        "Add a live defender who commits to one side."
+      ],
+      "cues": [
+        "Ball moves from hip to hip with the steps.",
+        "Second step is long and lateral.",
+        "Protect the ball away from the cone."
+      ],
+      "variations": [
+        "Finish with the inside hand.",
+        "Read the defender: go opposite the way they lean."
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Reverse Layup Series",
+      "focus": "Finishing",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 10,
+      "setup": "Players start on the right wing with a ball.",
+      "steps": [
+        "Drive baseline and go under the rim.",
+        "Finish on the left side with the left hand, using the rim to protect the ball.",
+        "Five reps, then switch to the left wing for a right-hand reverse.",
+        "Finish with a race: most makes in 45 seconds."
+      ],
+      "cues": [
+        "Use the rim as a shield.",
+        "Put spin on the ball off the glass.",
+        "Stay close to the basket — don't drift."
+      ],
+      "variations": [
+        "Add a chase defender trailing the driver.",
+        "Coach calls 'reverse' or 'regular' at the last second."
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Two-Foot Finishes in Traffic",
+      "focus": "Finishing",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 3,
+      "maxPlayers": 12,
+      "competitive": true,
+      "equipment": [
+        "Basketballs",
+        "2 pads (optional)"
+      ],
+      "setup": "Offensive player at the top of the key. Two defenders on each side of the lane with pads or arms up.",
+      "steps": [
+        "Offense drives into the lane.",
+        "Jump stop between the two defenders.",
+        "Defenders bump and swipe (no fouls).",
+        "Offense must finish with two feet: power shot, pump fake, or up-and-under.",
+        "Rotate: offense goes to defense."
+      ],
+      "cues": [
+        "Strong jump stop — that's your balance.",
+        "Eyes on the rim through contact.",
+        "Use the pump fake to get them off their feet."
+      ],
+      "variations": [
+        "Add a kick-out option if both defenders collapse.",
+        "First to 5 makes wins."
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Floater Ladder",
+      "focus": "Finishing",
+      "ageGroup": "U12–U14",
+      "skill": "Advanced",
+      "duration": 10,
+      "minPlayers": 1,
+      "maxPlayers": 8,
+      "setup": "Mark three spots: 6, 8, and 10 feet from the rim, down the middle of the lane. A tall teammate or coach stands near the rim with hands up.",
+      "steps": [
+        "Drive from the top and shoot a one-foot floater at the 6-foot spot.",
+        "Make 3 to move to the 8-foot spot.",
+        "Make 3 more to move to the 10-foot spot.",
+        "Repeat from the left and right side of the lane."
+      ],
+      "cues": [
+        "High release — over the big's hand.",
+        "Soft touch: lift, don't push.",
+        "Take off from either foot."
+      ],
+      "variations": [
+        "Use a two-foot jump-stop floater.",
+        "Live: the big decides to step up or stay home."
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Weak-Hand Layup Challenge",
+      "focus": "Finishing",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 20,
+      "competitive": true,
+      "setup": "Players split into two lines, one on each elbow, each with a ball.",
+      "steps": [
+        "Each player makes a layup with the off hand only.",
+        "A make with the correct hand and footwork earns a point.",
+        "Keep a running team total for 2 minutes.",
+        "Switch sides and try to beat the score."
+      ],
+      "cues": [
+        "Opposite foot jumps: left hand, right foot.",
+        "Knee up, ball up.",
+        "Slow down — make it count."
+      ],
+      "variations": [
+        "Score double for a no-dribble finish from the block.",
+        "Off-hand-only dribble on the approach."
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Finish Through Contact 1v1",
+      "focus": "Finishing",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 10,
+      "competitive": true,
+      "setup": "Offense at the wing with a ball, defender starting on the hip (a half step behind).",
+      "steps": [
+        "Offense drives baseline or middle.",
+        "Defender trails on the hip and challenges the finish.",
+        "Offense must score inside the lane — no pull-ups.",
+        "Play 3 possessions, then switch roles."
+      ],
+      "cues": [
+        "Seal the defender with your body.",
+        "Use the off arm to protect — don't push off.",
+        "Finish on the side away from the defender."
+      ],
+      "variations": [
+        "Start the defender a full step back for younger groups.",
+        "Allow one spin move per possession."
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Superman Rebounding",
+      "focus": "Rebounding",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 8,
+      "setup": "Player starts on one side of the lane outside the block with a ball.",
+      "steps": [
+        "Toss the ball off the glass so it goes to the other side of the lane.",
+        "Sprint across, jump, and catch it outside the opposite block.",
+        "Land, chin the ball, and toss it back across.",
+        "Go for 30 seconds. Rest and repeat 3 times."
+      ],
+      "cues": [
+        "Catch with two hands at the highest point.",
+        "Chin it — elbows out, ball tight.",
+        "Land in a wide, strong base."
+      ],
+      "variations": [
+        "Finish the last rep with a power put-back.",
+        "Add a defender who swipes at the ball on landing."
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Circle Box-Out",
+      "focus": "Rebounding",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 4,
+      "maxPlayers": 16,
+      "competitive": true,
+      "setup": "Ball sitting at the center of the center-circle (or a cone circle). Defenders face out on the circle with offense outside them.",
+      "steps": [
+        "On the whistle, defenders turn and box out their player.",
+        "Offense tries to touch the ball.",
+        "Hold the box-out for 5 seconds to win.",
+        "Switch roles."
+      ],
+      "cues": [
+        "Find a body before you look for the ball.",
+        "Butt down, elbows wide.",
+        "Move your feet to stay in front."
+      ],
+      "variations": [
+        "Extend to 8 seconds.",
+        "Coach shoots a real shot from the side — box out, then rebound."
+      ]
+    },
+    {
+      "id": 66,
+      "name": "3-on-3 Rebound War",
+      "focus": "Rebounding",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 12,
+      "minPlayers": 6,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "3 offense vs 3 defense on the perimeter. Coach shoots from the top.",
+      "steps": [
+        "Coach shoots, misses on purpose or not.",
+        "Defense must box out and secure the ball.",
+        "Defensive rebound = 1 point, then outlet to the coach.",
+        "Offensive rebound = offense scores 2 and stays on offense.",
+        "First team to 7."
+      ],
+      "cues": [
+        "Hit, then get.",
+        "Call 'Shot!' every time.",
+        "Rebound with two hands, chin it, outlet."
+      ],
+      "variations": [
+        "Add a live put-back after an offensive rebound.",
+        "Defenders start in help position, not on their player."
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Rebound & Outlet",
+      "focus": "Rebounding",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 3,
+      "maxPlayers": 12,
+      "setup": "Rebounder on the block. Outlet receiver at the wing near the free-throw line extended. Coach shoots from the elbow.",
+      "steps": [
+        "Coach shoots.",
+        "Rebounder pivots out of traffic and snaps a two-hand overhead outlet to the wing.",
+        "Wing catches with a foot on the sideline and turns up the floor.",
+        "Rotate: rebounder → outlet → back of the line."
+      ],
+      "cues": [
+        "Turn to the outside, away from the middle.",
+        "Outlet with two hands over the head — no lob.",
+        "Receiver: call for it and show a target."
+      ],
+      "variations": [
+        "Wing dribbles out to a layup at the other end.",
+        "Add a defender to deny the outlet."
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Offensive Rebound Put-Backs",
+      "focus": "Rebounding",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "setup": "Player on the block. Coach shoots from mid-range — mixed makes and misses.",
+      "steps": [
+        "As the shot goes up, player crashes from outside the block.",
+        "Read the angle: most misses go long to the opposite side.",
+        "Rebound and put it back with no dribble.",
+        "10 reps, then rotate."
+      ],
+      "cues": [
+        "Don't stand and watch — move.",
+        "Two hands, then go right back up.",
+        "Use a pump fake if a defender is there."
+      ],
+      "variations": [
+        "Add a defender who must box out.",
+        "Tip-in only — no catching."
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Bull in the Ring",
+      "focus": "Rebounding",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 5,
+      "maxPlayers": 10,
+      "competitive": true,
+      "setup": "One player (the bull) in the lane. Four players spread around the outside of the lane.",
+      "steps": [
+        "Coach shoots.",
+        "The bull must box out the nearest player and grab the rebound.",
+        "Outside players crash hard.",
+        "Bull stays in until they win 3 rebounds; then a new bull."
+      ],
+      "cues": [
+        "Find the closest body immediately.",
+        "Keep a wide base so you can't get pushed under.",
+        "Grab it with two hands."
+      ],
+      "variations": [
+        "Two bulls in the lane, working together.",
+        "Bull must outlet to the wing to count."
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Stationary Pound Series",
+      "focus": "Ball Handling",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Each player with a ball in their own space. Athletic stance.",
+      "steps": [
+        "Pound dribble at knee height with the right hand for 20 seconds.",
+        "Same with the left.",
+        "Low pound — ankle height — each hand for 15 seconds.",
+        "High pound — shoulder height — each hand for 15 seconds.",
+        "Finish with a 20-second side-to-side crossover pound."
+      ],
+      "cues": [
+        "Push the ball into the floor hard.",
+        "Fingertip control, wrist does the work.",
+        "Head up — count the fingers the coach holds up."
+      ],
+      "variations": [
+        "Add a tennis ball toss with the free hand.",
+        "Coach calls 'switch!' at random times."
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Zig-Zag Change of Direction",
+      "focus": "Ball Handling",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 20,
+      "equipment": [
+        "Basketballs",
+        "6–8 cones"
+      ],
+      "setup": "Cones set in a zig-zag down the court, about 15 feet apart. Players line up on the baseline.",
+      "steps": [
+        "Dribble to the first cone with the outside hand.",
+        "Plant the outside foot and cross over to the other hand.",
+        "Explode to the next cone.",
+        "Use a different move each trip: crossover, between the legs, behind the back, spin."
+      ],
+      "cues": [
+        "Sell the move — lean, then explode.",
+        "Change speed: slow into the cone, fast out of it.",
+        "Keep the ball on the side away from the cone."
+      ],
+      "variations": [
+        "Replace cones with defenders who just hold out a hand.",
+        "Finish every trip with a layup."
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Hesitation & Go",
+      "focus": "Ball Handling",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 16,
+      "setup": "Players at half court with a ball. A passive defender stands at the 3-point line.",
+      "steps": [
+        "Speed dribble toward the defender.",
+        "Hit the brakes: chop feet, raise eyes and shoulders like you're stopping.",
+        "Explode past with the same hand.",
+        "Finish with a layup.",
+        "Alternate hands each rep."
+      ],
+      "cues": [
+        "Shoulders up on the hesitation — sell it.",
+        "Keep the dribble alive and low.",
+        "Go on the defender's first step back."
+      ],
+      "variations": [
+        "Defender plays live after the hesitation.",
+        "Combine hesitation + crossover."
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Two-Ball Stationary Series",
+      "focus": "Ball Handling",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 15,
+      "equipment": [
+        "2 basketballs per player"
+      ],
+      "setup": "Each player with two balls in their own space.",
+      "steps": [
+        "Both balls pound at the same time — 20 seconds.",
+        "Alternate: one up, one down — 20 seconds.",
+        "Side-to-side with both balls — 20 seconds.",
+        "Front-to-back with both balls — 20 seconds.",
+        "One high, one low — 20 seconds."
+      ],
+      "cues": [
+        "Don't look down.",
+        "Weak hand sets the rhythm.",
+        "Stay low — the lower you are, the less time to lose control."
+      ],
+      "variations": [
+        "Walk forward while dribbling.",
+        "Add a crossover between balls."
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Pressure Dribble Gauntlet",
+      "focus": "Ball Handling",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 4,
+      "maxPlayers": 15,
+      "competitive": true,
+      "setup": "Three defenders spaced in the lane from the free-throw line to the baseline, each with a hand out and staying in a small area.",
+      "steps": [
+        "Ball handler dribbles through the gauntlet from the top.",
+        "Defenders try to poke the ball but can't leave their spot.",
+        "Handler must keep the ball protected and finish with a layup.",
+        "Rotate through all spots."
+      ],
+      "cues": [
+        "Protect the ball with the off arm.",
+        "Keep the ball on the outside of your body.",
+        "Don't pick it up — keep it alive."
+      ],
+      "variations": [
+        "Defenders can take one step.",
+        "Add a time limit of 6 seconds."
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Full-Court Retreat Dribble",
+      "focus": "Ball Handling",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "setup": "Ball handler at the baseline, defender facing them. Full court, one sideline half.",
+      "steps": [
+        "Defender pressures; handler pushes forward.",
+        "When trapped or cut off, handler retreats two dribbles back.",
+        "Then attacks with a crossover or between-the-legs.",
+        "Continue the length of the court."
+      ],
+      "cues": [
+        "Retreat with your body between the ball and the defender.",
+        "Eyes up — see the floor even under pressure.",
+        "Retreat dribble creates space, then attack."
+      ],
+      "variations": [
+        "Add a second defender for a trap.",
+        "Handler must make one pass to a teammate by half court."
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Two-Line Passing on the Move",
+      "focus": "Passing",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 20,
+      "setup": "Partners on the baseline about 12 feet apart, one ball per pair.",
+      "steps": [
+        "Partners run down the court passing the ball back and forth.",
+        "No dribbles allowed.",
+        "Layup at the far end.",
+        "Come back the other side with bounce passes."
+      ],
+      "cues": [
+        "Lead your partner — pass in front, not behind.",
+        "Catch with two hands, ready to pass again.",
+        "Talk: 'Here!'"
+      ],
+      "variations": [
+        "Overhead passes only.",
+        "Add a third player in the middle (3-man weave lead-in)."
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Pass and Follow",
+      "focus": "Passing",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 4,
+      "maxPlayers": 16,
+      "setup": "Four lines in a square, about 15 feet apart. One ball starts in one line.",
+      "steps": [
+        "Front player passes to the line on the right.",
+        "They follow their pass and run to the back of that line.",
+        "Keep it going around the square.",
+        "Switch directions every minute."
+      ],
+      "cues": [
+        "Pass, then move — no standing.",
+        "Call the name of the player you're passing to.",
+        "Step into every pass."
+      ],
+      "variations": [
+        "Add a second ball.",
+        "Bounce passes only."
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Drive & Kick",
+      "focus": "Passing",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 3,
+      "maxPlayers": 12,
+      "setup": "Ball handler at the top. Shooters at both wings. One defender in the lane.",
+      "steps": [
+        "Handler drives at the defender.",
+        "If the defender helps, pass to the open wing.",
+        "If the defender stays home, finish the layup.",
+        "Wings shoot or attack the closeout.",
+        "Rotate spots after each rep."
+      ],
+      "cues": [
+        "Get two feet in the paint before you pass.",
+        "One-hand push pass — fast and on target.",
+        "Shooters: be ready with hands up."
+      ],
+      "variations": [
+        "Add a second defender.",
+        "Corner drift option on baseline drives."
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Two-Ball Partner Passing",
+      "focus": "Passing",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 20,
+      "equipment": [
+        "2 basketballs per pair"
+      ],
+      "setup": "Partners 8–10 feet apart. Each has a ball.",
+      "steps": [
+        "One player throws chest passes, the other throws bounce passes, at the same time.",
+        "After 30 seconds, switch roles.",
+        "Then both throw chest passes but on different hands (one right, one left).",
+        "Go fast for the last 30 seconds."
+      ],
+      "cues": [
+        "Eyes up — see both balls.",
+        "Soft hands on the catch.",
+        "Rhythm: say 'one, two' together."
+      ],
+      "variations": [
+        "Step back a foot every 20 seconds.",
+        "Do it while sliding down the sideline."
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Pass Fake Bull",
+      "focus": "Passing",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 5,
+      "maxPlayers": 10,
+      "competitive": true,
+      "setup": "Four passers on a square around the lane. One defender in the middle.",
+      "steps": [
+        "Passers move the ball around without passing to adjacent players twice in a row.",
+        "Each passer must use a pass fake before passing.",
+        "Defender tries to touch the ball.",
+        "If touched, the passer becomes the new defender."
+      ],
+      "cues": [
+        "Fake a pass to move the defender, then pass.",
+        "Pivot to create an angle.",
+        "No lobs — keep passes crisp."
+      ],
+      "variations": [
+        "Add a second defender.",
+        "No bounce passes."
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Full-Court Outlet & Fill",
+      "focus": "Passing",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 12,
+      "minPlayers": 6,
+      "maxPlayers": 15,
+      "setup": "Coach shoots from the elbow. Three players near the lane, more waiting at half court.",
+      "steps": [
+        "One player rebounds and outlets to a guard on the wing.",
+        "The other two fill the lanes wide.",
+        "Guard pushes the ball up the middle and finishes with a pass for a layup.",
+        "Next group goes the other way."
+      ],
+      "cues": [
+        "Outlet in under two seconds.",
+        "Wings sprint wide to the corners.",
+        "Pass ahead whenever you can."
+      ],
+      "variations": [
+        "Add a defender back to make it 3-on-1.",
+        "Middle player must hit a trailer for a jump shot."
+      ]
+    },
+    {
+      "id": 82,
+      "name": "One-Hand Form Shooting",
+      "focus": "Shooting",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 10,
+      "setup": "Player stands 3 feet in front of the rim with a ball. Only the shooting hand on the ball.",
+      "steps": [
+        "Hold the ball on the fingers with the elbow under it.",
+        "Shoot with only one hand and freeze the follow-through.",
+        "Make 5, then take one step back.",
+        "Continue to 6 feet, then repeat on the left and right block."
+      ],
+      "cues": [
+        "Elbow in, under the ball.",
+        "Reach into the cookie jar on the follow-through.",
+        "High arc — up, not out."
+      ],
+      "variations": [
+        "Close your eyes before the shot.",
+        "Shoot from a chair to isolate the arm."
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Catch & Shoot Footwork",
+      "focus": "Shooting",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "setup": "Shooter at the wing, passer at the top.",
+      "steps": [
+        "Shooter shows hands and catches with a 1-2 step (inside foot first).",
+        "Shoot.",
+        "Next rep: hop into the catch on both feet.",
+        "Alternate 1-2 and hop. 5 makes each, then rotate."
+      ],
+      "cues": [
+        "Hands ready before the ball comes.",
+        "Feet are set as the ball arrives.",
+        "Same shot every time."
+      ],
+      "variations": [
+        "Shooter cuts from the block to the wing before the catch.",
+        "Add a closeout."
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Shot Fake One-Dribble Pull-Up",
+      "focus": "Shooting",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "setup": "Shooter at the wing with a ball. Passive defender closes out.",
+      "steps": [
+        "Defender runs at the shooter.",
+        "Shooter shot-fakes as the defender closes.",
+        "One hard dribble to the side.",
+        "Pull up from mid-range.",
+        "Alternate going left and right."
+      ],
+      "cues": [
+        "Sell the fake with eyes and shoulders.",
+        "Big first dribble.",
+        "Stop on balance, go straight up."
+      ],
+      "variations": [
+        "Two dribbles to the elbow.",
+        "Live 1v1 after the fake."
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Free Throw Pressure",
+      "focus": "Shooting",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 15,
+      "competitive": true,
+      "setup": "Teams at each basket in a line at the free-throw line.",
+      "steps": [
+        "Each player shoots 2 free throws.",
+        "Miss both: whole team runs a sideline sprint.",
+        "Make both: team earns a point.",
+        "First team to 10 points wins."
+      ],
+      "cues": [
+        "Same routine every time.",
+        "Breathe out before the shot.",
+        "Follow through and hold it."
+      ],
+      "variations": [
+        "Shoot after a sprint to simulate game fatigue.",
+        "Shoot one-and-ones."
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Partner Shooting Race",
+      "focus": "Shooting",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "Partners at one basket. One ball. Shooter starts at a spot, partner rebounds.",
+      "steps": [
+        "Shooter takes 5 shots from one spot; partner rebounds and passes.",
+        "Switch roles.",
+        "Move to the next spot.",
+        "Most makes after 3 spots wins."
+      ],
+      "cues": [
+        "Rebounder: pass to the shooter's pocket.",
+        "Shooter: always on the move to the next spot.",
+        "Ready hands."
+      ],
+      "variations": [
+        "Use only 3-point spots for older players.",
+        "Two pairs at one basket — first to 20 makes."
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Spot-Up 3-Point Rotation",
+      "focus": "Shooting",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 12,
+      "minPlayers": 3,
+      "maxPlayers": 8,
+      "setup": "Shooter in the corner, passer at the top, rebounder under the basket.",
+      "steps": [
+        "Shooter takes 5 threes from the corner.",
+        "Then the wing, the top, the other wing, the other corner.",
+        "Rebounder → passer → shooter after each spot.",
+        "Track makes per spot."
+      ],
+      "cues": [
+        "Feet set before the catch.",
+        "Legs power the shot from deep — don't push with the arms.",
+        "Finish high."
+      ],
+      "variations": [
+        "Shooter must make 3 before moving on.",
+        "Add a sprint to half court between spots."
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Shoot Off the Screen",
+      "focus": "Shooting",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 10,
+      "minPlayers": 3,
+      "maxPlayers": 8,
+      "equipment": [
+        "Basketballs",
+        "Chair or cone"
+      ],
+      "setup": "Chair at the elbow as a screen. Shooter on the block, passer at the top.",
+      "steps": [
+        "Shooter walks the defender into the lane and curls hard off the chair.",
+        "Catch and shoot at the elbow.",
+        "Next rep: flare away to the wing.",
+        "Next rep: curl tight to the rim for a layup."
+      ],
+      "cues": [
+        "Shoulder to the chair — no gap.",
+        "Read the defender: curl if they trail, fade if they cheat.",
+        "Square up in the air."
+      ],
+      "variations": [
+        "Replace the chair with a real screener.",
+        "Add a live defender."
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Mirror Drill",
+      "focus": "Defense",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Partners face each other across a line on the floor, both in a defensive stance.",
+      "steps": [
+        "One player leads: slides, steps back, steps forward.",
+        "The other mirrors every move.",
+        "Go for 20 seconds, then switch leaders.",
+        "Three rounds each."
+      ],
+      "cues": [
+        "Stay low the whole time.",
+        "Never cross your feet.",
+        "Watch the belly button, not the head."
+      ],
+      "variations": [
+        "Leader can sprint 3 steps — mirror must keep up.",
+        "Add a ball for the leader."
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Closeout & Contain",
+      "focus": "Defense",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "Defender under the rim with the ball. Offense at the wing.",
+      "steps": [
+        "Defender passes to the wing and closes out.",
+        "Offense can shoot or drive (two dribbles max).",
+        "Defender must contain and contest.",
+        "Play to a score or stop, then switch."
+      ],
+      "cues": [
+        "Sprint halfway, then chop your feet.",
+        "High hand to the shooting hand.",
+        "Stay between the ball and the basket."
+      ],
+      "variations": [
+        "Offense gets 3 dribbles.",
+        "Add a help defender."
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Help & Recover",
+      "focus": "Defense",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 12,
+      "minPlayers": 4,
+      "maxPlayers": 12,
+      "setup": "Two offensive players at the wings, two defenders. Coach at the top with the ball.",
+      "steps": [
+        "Coach passes to one wing.",
+        "On-ball defender pressures; off-ball defender jumps to help (one foot in the paint).",
+        "Wing drives; help defender stops the ball.",
+        "Ball is kicked out; help defender recovers and closes out.",
+        "Play live for 5 seconds."
+      ],
+      "cues": [
+        "See your player and the ball at the same time — pistols.",
+        "Jump to the ball on every pass.",
+        "Recover with high hands, then chop feet."
+      ],
+      "variations": [
+        "Add a third pair.",
+        "Allow skip passes."
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Charge Drill",
+      "focus": "Defense",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "equipment": [
+        "Basketballs",
+        "Crash pad (optional)"
+      ],
+      "setup": "Defender in help position outside the restricted area. Offensive player drives from the wing.",
+      "steps": [
+        "Teach the fall first: chin tucked, sit down, roll back on the butt and shoulders.",
+        "Practice the fall from standing 5 times.",
+        "Then the drive: defender slides into position and takes the hit.",
+        "Offense comes at half speed only."
+      ],
+      "cues": [
+        "Get there early — feet set, square.",
+        "Chin tucked, arms in.",
+        "Never put a hand back to catch yourself."
+      ],
+      "variations": [
+        "Defender also practices sliding into the block-vs-charge spot.",
+        "Run it on a mat for younger players."
+      ]
+    },
+    {
+      "id": 93,
+      "name": "Full-Court 1v1 Zig-Zag Live",
+      "focus": "Defense",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 10,
+      "minPlayers": 2,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "Players pair up on the baseline, using half the width of the court.",
+      "steps": [
+        "Offense dribbles full court, changing direction.",
+        "Defender plays live, trying to turn the ball handler at least 3 times.",
+        "At half court, play live to the basket.",
+        "Switch roles coming back."
+      ],
+      "cues": [
+        "Nose on the ball.",
+        "Push them toward the sideline.",
+        "Beat them to the spot — don't reach."
+      ],
+      "variations": [
+        "Defender must keep hands behind the back.",
+        "Add a time limit for offense."
+      ]
+    },
+    {
+      "id": 94,
+      "name": "2-on-2 Ball Screen Defense",
+      "focus": "Defense",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 12,
+      "minPlayers": 4,
+      "maxPlayers": 12,
+      "setup": "Ball handler at the top, screener on the elbow, both guarded.",
+      "steps": [
+        "Screener sets a ball screen.",
+        "Defense walks through the chosen coverage: hedge, switch, or drop.",
+        "Run it at half speed 3 times, then full speed.",
+        "Play live to a score or stop."
+      ],
+      "cues": [
+        "Screener's defender: talk early — 'Screen left!'",
+        "Ball defender: fight over the top.",
+        "Recover to your player after the hedge."
+      ],
+      "variations": [
+        "Change coverage every 3 reps.",
+        "Add a weak-side player."
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Ladder Footwork",
+      "focus": "Footwork",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 20,
+      "equipment": [
+        "Agility ladder or tape lines"
+      ],
+      "setup": "Agility ladder on the floor (or tape squares). Players in one line.",
+      "steps": [
+        "One foot in each square.",
+        "Two feet in each square.",
+        "Lateral in-in-out-out.",
+        "Icky shuffle.",
+        "Finish with a sprint to the next line."
+      ],
+      "cues": [
+        "Quick feet, light on the toes.",
+        "Arms pump.",
+        "Eyes up, not down at the ladder."
+      ],
+      "variations": [
+        "Add a ball and dribble through.",
+        "Catch a pass at the end and shoot a layup."
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Pivot Series",
+      "focus": "Footwork",
+      "ageGroup": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Every player with a ball, scattered on the court.",
+      "steps": [
+        "Jump stop.",
+        "Front pivot on the left foot, 4 quarter turns.",
+        "Reverse pivot on the left foot, 4 quarter turns.",
+        "Repeat on the right foot.",
+        "Coach calls the pivot, players react."
+      ],
+      "cues": [
+        "Pivot foot stays stuck to the floor.",
+        "Stay low and keep the ball tight.",
+        "Big step with the free foot."
+      ],
+      "variations": [
+        "Partner defender swipes at the ball.",
+        "Pivot and pass to a partner."
+      ]
+    },
+    {
+      "id": 97,
+      "name": "Drop Step Series",
+      "focus": "Footwork",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 1,
+      "maxPlayers": 8,
+      "setup": "Player on the block, back to the basket. Coach or passer at the wing.",
+      "steps": [
+        "Catch with a two-hand target, feel the defender.",
+        "Drop step to the baseline and power up.",
+        "Drop step to the middle and use a jump hook.",
+        "Go both sides of the floor."
+      ],
+      "cues": [
+        "Seal the defender with your back.",
+        "Drop step is a big step — get your hip around.",
+        "Two-foot finish with the ball high."
+      ],
+      "variations": [
+        "Add an up-and-under.",
+        "Live defender."
+      ]
+    },
+    {
+      "id": 98,
+      "name": "Close-Out Footwork Lines",
+      "focus": "Footwork",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Lines on the baseline. Cones at the free-throw line.",
+      "steps": [
+        "Sprint to the cone.",
+        "Chop feet 3 feet from the cone, hands high.",
+        "Slide back to the baseline.",
+        "Repeat 5 times."
+      ],
+      "cues": [
+        "Chop, chop, chop — short steps.",
+        "Hands up as you arrive.",
+        "Butt down, back straight."
+      ],
+      "variations": [
+        "Add a coach shot fake at the cone.",
+        "Closeout to a ball handler who drives."
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Inside Pivot Catch",
+      "focus": "Footwork",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 2,
+      "maxPlayers": 10,
+      "setup": "Player at the wing, passer at the top.",
+      "steps": [
+        "Player cuts out to the wing and catches with a 1-2 stop.",
+        "Inside foot becomes the pivot.",
+        "Turn to face the basket in triple threat.",
+        "Rep 10 times, then switch sides."
+      ],
+      "cues": [
+        "Catch with feet ready.",
+        "Turn into the triple-threat position immediately.",
+        "See the rim, see the floor."
+      ],
+      "variations": [
+        "Add a jab step after the turn.",
+        "Use the outside foot as the pivot and compare."
+      ]
+    },
+    {
+      "id": 100,
+      "name": "3-on-3 Advantage",
+      "focus": "Team Concepts",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 12,
+      "minPlayers": 6,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "3 offense vs 3 defense. One defender starts on the baseline, others on their players.",
+      "steps": [
+        "Coach passes to offense.",
+        "Late defender sprints in.",
+        "Offense plays 3-on-2 until the third defender arrives.",
+        "Play to a score or stop. Switch roles."
+      ],
+      "cues": [
+        "Offense: attack fast, find the open player.",
+        "Defense: talk — 'I got ball!'",
+        "Late defender: sprint to the paint first."
+      ],
+      "variations": [
+        "Make it 4-on-4.",
+        "Offense must score in 8 seconds."
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Pass-Cut-Replace",
+      "focus": "Team Concepts",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 10,
+      "minPlayers": 4,
+      "maxPlayers": 10,
+      "setup": "Four players spread out on the perimeter: two wings and two at the top.",
+      "steps": [
+        "Pass to a wing.",
+        "The passer cuts to the basket.",
+        "Everyone replaces to fill the open spot.",
+        "The ball returns to the cutter if they're open; otherwise keep it going."
+      ],
+      "cues": [
+        "Pass and cut — never stand.",
+        "Fill the empty spot.",
+        "Sharp cuts, change speed."
+      ],
+      "variations": [
+        "Add 4 defenders after 2 minutes.",
+        "Every 5th pass must be a bounce pass."
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Shell Rotation Walkthrough",
+      "focus": "Team Concepts",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 10,
+      "minPlayers": 8,
+      "maxPlayers": 10,
+      "setup": "4 offense on the perimeter, 4 defense.",
+      "steps": [
+        "Ball moves around the perimeter slowly.",
+        "On each pass, defense moves: on-ball, deny, help.",
+        "Coach freezes and checks positions.",
+        "Speed up to game speed."
+      ],
+      "cues": [
+        "Jump to the ball on every pass.",
+        "Talk on every pass: 'Ball! Deny! Help!'",
+        "See the ball and your player."
+      ],
+      "variations": [
+        "Add drives and kick-outs.",
+        "Allow skip passes."
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Fast Break 2-on-1",
+      "focus": "Team Concepts",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 10,
+      "minPlayers": 3,
+      "maxPlayers": 15,
+      "competitive": true,
+      "setup": "Two offensive players at half court. One defender in the lane.",
+      "steps": [
+        "Offense attacks 2-on-1.",
+        "Ball handler drives at the defender.",
+        "Pass to the open player if the defender commits.",
+        "The defender becomes offense for the next rep."
+      ],
+      "cues": [
+        "Attack the defender — make them choose.",
+        "Stay wide so the defender can't guard both.",
+        "Make the extra pass."
+      ],
+      "variations": [
+        "Add a trailing defender.",
+        "Score off the backboard only."
+      ]
+    },
+    {
+      "id": 104,
+      "name": "5-on-0 Motion Offense",
+      "focus": "Team Concepts",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 12,
+      "minPlayers": 5,
+      "maxPlayers": 10,
+      "setup": "5 players in a 4-out, 1-in set. Coach calls the actions.",
+      "steps": [
+        "Pass and cut.",
+        "Screen away.",
+        "Post feeds and relocate.",
+        "Drive and kick.",
+        "Finish every possession with a shot."
+      ],
+      "cues": [
+        "Space: 15 feet apart.",
+        "Hold screens for a full count.",
+        "Cut with purpose — make the defense react."
+      ],
+      "variations": [
+        "Add defense.",
+        "Must make 5 passes before shooting."
+      ]
+    },
+    {
+      "id": 105,
+      "name": "4-on-4 Shell to Live",
+      "focus": "Team Concepts",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 15,
+      "minPlayers": 8,
+      "maxPlayers": 12,
+      "competitive": true,
+      "setup": "4-on-4 in a half court.",
+      "steps": [
+        "Start with 5 passes of shell defense.",
+        "On the coach's call, play live.",
+        "Defense scores 1 point for a stop.",
+        "Offense scores 2 for a basket.",
+        "Switch every 3 possessions."
+      ],
+      "cues": [
+        "Communicate on every pass.",
+        "Help and recover.",
+        "Box out after every shot."
+      ],
+      "variations": [
+        "Offense limited to 2 dribbles.",
+        "Add a ball screen option."
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Scrimmage with Constraints",
+      "focus": "Team Concepts",
+      "ageGroup": "U10–U12",
+      "skill": "Intermediate",
+      "duration": 15,
+      "minPlayers": 6,
+      "maxPlayers": 10,
+      "competitive": true,
+      "setup": "5-on-5 (or 4-on-4) scrimmage.",
+      "steps": [
+        "Play a normal scrimmage.",
+        "Add a constraint every 3 minutes: no dribble, 3-pass minimum, layups only, and so on.",
+        "Keep score.",
+        "Debrief quickly between constraints."
+      ],
+      "cues": [
+        "Play hard on every possession.",
+        "Talk on defense.",
+        "Share the ball."
+      ],
+      "variations": [
+        "Offensive rebounds count double.",
+        "Bonus points for deflections."
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Transition 3-on-2, 2-on-1",
+      "focus": "Team Concepts",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 12,
+      "minPlayers": 5,
+      "maxPlayers": 15,
+      "competitive": true,
+      "setup": "3 offense at half court, 2 defense in the lane.",
+      "steps": [
+        "Offense attacks 3-on-2.",
+        "After a score or stop, the 2 defenders go the other way 2-on-1 against the shooter.",
+        "Rotate in new groups."
+      ],
+      "cues": [
+        "Fill the lanes wide.",
+        "Defense: stop the ball first.",
+        "Make the extra pass."
+      ],
+      "variations": [
+        "Shot clock of 6 seconds.",
+        "Defenders start on the baseline."
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Suicides with Finishes",
+      "focus": "Conditioning",
+      "ageGroup": "U12–U14",
+      "skill": "Intermediate",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Players on the baseline. A ball at each line.",
+      "steps": [
+        "Sprint to the free-throw line and back.",
+        "Sprint to half court and back.",
+        "Sprint to the far free-throw line and back.",
+        "Sprint the full court and back.",
+        "Finish with a layup."
+      ],
+      "cues": [
+        "Touch every line.",
+        "Push through the turns.",
+        "Finish strong when tired."
+      ],
+      "variations": [
+        "Use a ball the whole time.",
+        "Team must finish under a target time."
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Lane Slides",
+      "focus": "Conditioning",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 5,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Players on one lane line.",
+      "steps": [
+        "Slide across the lane and touch the line.",
+        "Slide back.",
+        "Keep going for 30 seconds.",
+        "Rest 15 seconds; repeat 4 times."
+      ],
+      "cues": [
+        "Stay low.",
+        "Don't cross your feet.",
+        "Touch the line with your hand."
+      ],
+      "variations": [
+        "Count reps and race a partner.",
+        "Add a ball held overhead."
+      ]
+    },
+    {
+      "id": 110,
+      "name": "17s",
+      "focus": "Conditioning",
+      "ageGroup": "U14+",
+      "skill": "Advanced",
+      "duration": 6,
+      "minPlayers": 1,
+      "maxPlayers": 30,
+      "setup": "Players on one sideline.",
+      "steps": [
+        "Sprint sideline to sideline 17 times.",
+        "Goal time: 60 seconds.",
+        "Rest 1 minute; repeat."
+      ],
+      "cues": [
+        "Plant the outside foot on each turn.",
+        "Stay low through the turns.",
+        "Breathe."
+      ],
+      "variations": [
+        "Dribble a ball.",
+        "Team relay version."
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Partner Push-Ups & Sprints",
+      "focus": "Conditioning",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Partners on the baseline.",
+      "steps": [
+        "One partner does 10 push-ups while the other sprints to half court and back.",
+        "Switch.",
+        "Repeat 3 times."
+      ],
+      "cues": [
+        "Full range of motion.",
+        "Sprint hard.",
+        "Encourage your partner."
+      ],
+      "variations": [
+        "Swap push-ups for sit-ups.",
+        "Add a ball."
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Full-Court Layup Race",
+      "focus": "Conditioning",
+      "ageGroup": "U10–U12",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 20,
+      "competitive": true,
+      "setup": "Two teams at opposite baselines, one ball each.",
+      "steps": [
+        "Players dribble full court, make a layup, and come back.",
+        "Hand off to the next player.",
+        "First team to 10 makes wins."
+      ],
+      "cues": [
+        "Speed dribble — ball out in front.",
+        "Make the layup.",
+        "Cheer on your team."
+      ],
+      "variations": [
+        "Off hand only.",
+        "Teams must make 2 laps each."
+      ]
+    },
+    {
+      "id": 113,
+      "name": "Sharks & Minnows",
+      "focus": "Ball Handling",
+      "ageGroup": "U8–U10",
+      "maxAge": "U10–U12",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 6,
+      "maxPlayers": 30,
+      "competitive": true,
+      "setup": "Minnows on one baseline, each with a ball. One or two sharks without a ball in the middle.",
+      "steps": [
+        "On 'go', minnows dribble to the other baseline.",
+        "Sharks try to steal or knock away a ball.",
+        "A minnow who loses the ball becomes a shark.",
+        "Last minnow standing wins."
+      ],
+      "cues": [
+        "Eyes up — find the open space.",
+        "Protect with the off arm.",
+        "Change speed to escape."
+      ],
+      "variations": [
+        "Weak hand only.",
+        "Sharks must stay inside the 3-point line."
+      ]
+    },
+    {
+      "id": 114,
+      "name": "Hot Shot",
+      "focus": "Shooting",
+      "ageGroup": "U8–U10",
+      "maxAge": "U12–U14",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "competitive": true,
+      "equipment": [
+        "Basketballs",
+        "Tape or cones for spots"
+      ],
+      "setup": "Mark spots worth 1, 2, and 3 points around the key.",
+      "steps": [
+        "Player has 60 seconds to score as many points as possible.",
+        "Rebound your own shot.",
+        "Can't shoot from the same spot twice in a row.",
+        "Track scores."
+      ],
+      "cues": [
+        "Take good shots.",
+        "Hustle after rebounds.",
+        "Know the time left."
+      ],
+      "variations": [
+        "Team version — total team score.",
+        "Add a 5-point 'hot spot'."
+      ]
+    },
+    {
+      "id": 115,
+      "name": "Knockout",
+      "focus": "Shooting",
+      "ageGroup": "U8–U10",
+      "maxAge": "U12–U14",
+      "skill": "Beginner",
+      "duration": 8,
+      "minPlayers": 3,
+      "maxPlayers": 15,
+      "competitive": true,
+      "setup": "Players line up at the free-throw line. First two players have a ball.",
+      "steps": [
+        "First player shoots.",
+        "Second player shoots immediately after.",
+        "If the player behind makes before the player in front, the front player is out.",
+        "Last player standing wins."
+      ],
+      "cues": [
+        "Stay calm.",
+        "Follow your shot.",
+        "Quick put-back if you miss."
+      ],
+      "variations": [
+        "Shoot from the elbows.",
+        "Use layups only for younger players."
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Simon Says Ball Handling",
+      "focus": "Ball Handling",
+      "ageGroup": "U8–U10",
+      "maxAge": "U8–U10",
+      "skill": "Beginner",
+      "duration": 6,
+      "minPlayers": 2,
+      "maxPlayers": 30,
+      "setup": "Players spread out with a ball each, facing the coach.",
+      "steps": [
+        "Coach calls moves: 'Simon says dribble with your left hand!'",
+        "Players only do it if the coach says 'Simon says'.",
+        "Anyone who moves on a fake call does 5 dribbles with eyes closed, then rejoins.",
+        "Speed up the calls."
+      ],
+      "cues": [
+        "Listen first.",
+        "Eyes up on the coach.",
+        "Keep dribbling the whole time."
+      ],
+      "variations": [
+        "A player becomes Simon.",
+        "Add moves like 'through the legs'."
       ]
     }
   ]

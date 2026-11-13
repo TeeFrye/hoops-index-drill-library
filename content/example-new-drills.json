@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Example Drill (delete me)",
+    "focus": "Shooting",
+    "ageGroup": "U10–U12",
+    "skill": "Beginner",
+    "duration": 8,
+    "minPlayers": 1,
+    "maxPlayers": 10,
+    "equipment": ["Basketballs"],
+    "competitive": false,
+    "setup": "Where players start and what you need.",
+    "steps": ["First step.", "Second step."],
+    "cues": ["Short coach-voice cue."],
+    "variations": ["Make it harder or easier."]
+  }
+]

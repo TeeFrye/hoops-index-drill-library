@@ -20,88 +20,86 @@ That's the problem this is trying to solve.
 
 ## What it does
 
-- **47 youth basketball drills** organized by focus area, age group, skill level, and player count
-- **Filter by player count** — because knowing you have 9 kids tonight changes everything
-- **Search by name** for drills you already know
-- **Favorites** — star your go-to drills and pull them up instantly
-- **AI Drill Generator** — describe what you need and get a custom drill on the spot
-- Works on your phone, in the gym, with no login required
+Hoops Index installs on your phone like a native app (Share → **Add to Home Screen** on iPhone) and works fully offline once installed, so a dead gym signal doesn't matter.
+
+- **116 youth basketball drills** across 10 focus areas, filterable by player count, age group, skill level, length and equipment
+- **Practice builder**: pick your time, roster, age and focus and get a full plan (warm-up → skill blocks → water breaks → competitive finisher), then reorder, swap or retime anything
+- **Practice Mode**: a sideline timer that runs your plan drill by drill, with coaching cues on screen, whistle beeps, +1 min, and the screen kept awake
+- **Saved, Recent and Notes**: star go-to drills and keep your own notes on any drill
+- **Share a plan** as text with assistant coaches
+- **Backup & restore**, light/dark mode, no login, and all data stays on the device
 
 ---
 
 ## Drill library
 
-**Focus areas:**
-
 | Focus | Count |
 |---|---|
-| Ball Handling | 9 |
-| Defense | 9 |
-| Shooting | 9 |
-| Passing | 8 |
-| Footwork | 6 |
-| Team Concepts | 5 |
-| Conditioning | 1 |
+| Ball Handling | 17 |
+| Shooting | 15 |
+| Passing | 14 |
+| Defense | 14 |
+| Team Concepts | 13 |
+| Finishing | 11 |
+| Footwork | 11 |
+| Warm-Up | 8 |
+| Rebounding | 7 |
+| Conditioning | 6 |
 
-**Age groups:** U8–U10 · U10–U12 · U12–U14 · U14+
+**Age groups:** U8–U10 · U10–U12 · U12–U14 · U14+ (each drill lists the youngest group it suits, plus an optional `maxAge` for little-kid games)
 
-**Sources:** Drills are based on content from [Breakthrough Basketball](https://www.breakthroughbasketball.com) and Pro Skills Basketball — cross-referenced against what coaches actually use at the youth level. Staples like the Mikan Drill, Shell Drill, and Form Shooting sit alongside drills like Kill the Grass, Score for Stops, and Red Light Green Light.
-
----
-
-## Phase 2 (future)
-
-This version is a solid starting point. Here's where I'd like to take it:
-
-- **Expand the drill library** by sourcing more content from vetted coaching resources and organizing it into a proper database
-- **Connect a backend** so the drill library can grow continuously without requiring code changes
-- **Practice plan builder** — input your time, player count, and focus areas and get a full practice plan generated automatically
-- **API key management** so the AI drill generator works for anyone without exposing credentials
-
-Whether or not I get to all of this, the current version solves the immediate problem.
+All drill write-ups are original. Classic drill concepts (Mikan, Shell, Knockout…) are common coaching knowledge, but the descriptions are written for this app rather than copied from other sites.
 
 ---
 
-## How it's built
+## Adding drills
 
-- **Stack:** Single-file HTML using React (via CDN) + Babel standalone — no build tools, no npm
-- **Data:** `drills.json` in the repo root — plain JSON, editable in any text editor
-- **AI:** Claude API (`claude-sonnet-4-20250514`) for the drill generator
-- **Hosting:** GitHub Pages
-- **Storage:** `localStorage` for favorites, AI-generated drills, and theme preference
-
----
-
-## Adding or editing drills
-
-All drills live in `drills.json`. To add a drill, copy any existing drill object, assign a new unique `id`, edit the fields, and commit. No code changes needed.
+1. Copy `content/example-new-drills.json` to a new file and fill in one or more drills (no `id` needed).
+2. Run `npm run drills:add -- content/your-file.json`. This validates every field, assigns ids, and skips duplicates by name.
+3. `npm run drills:check` validates the whole library (the build runs it automatically).
 
 **Schema:**
 ```json
 {
-  "id": 48,
   "name": "Drill Name",
-  "focus": "Ball Handling | Passing | Shooting | Defense | Footwork | Conditioning | Team Concepts",
+  "focus": "Warm-Up | Ball Handling | Passing | Shooting | Finishing | Footwork | Defense | Rebounding | Team Concepts | Conditioning",
   "ageGroup": "U8–U10 | U10–U12 | U12–U14 | U14+",
+  "maxAge": "optional, oldest age group it suits",
   "skill": "Beginner | Intermediate | Advanced",
   "duration": 10,
   "minPlayers": 1,
   "maxPlayers": 10,
+  "equipment": ["optional", "list"],
+  "competitive": true,
   "setup": "What you need and how to set it up.",
-  "steps": ["Step 1", "Step 2", "Step 3"],
-  "cues": ["Coaching cue 1", "Coaching cue 2"],
-  "variations": ["Variation 1", "Variation 2"]
+  "steps": ["Step 1", "Step 2"],
+  "cues": ["Coaching cue"],
+  "variations": ["Variation"]
 }
 ```
 
 ---
 
-## File structure
-```
-hoops-index-drill-library/
-├── index.html    ← the entire app
-├── drills.json   ← all drill data
-└── README.md
+## Development
+
+```bash
+npm install
+npm run dev       # local dev server
+npm run build     # validate drills, type-check, build to dist/
+npm run preview   # serve the production build
 ```
 
+- **Stack:** React + TypeScript + Vite, `vite-plugin-pwa` for the offline service worker and install manifest
+- **Data:** `src/data/drills.json`, bundled into the app so it works offline
+- **Storage:** `localStorage` (favorites, practices, notes, settings)
+- **Hosting:** GitHub Pages, deployed by `.github/workflows/deploy.yml` on every push to `main`
+- `legacy/index.html` is the original v1 single-file app, kept for reference
+
 ---
+
+## Roadmap
+
+- **App Store:** wrap with Capacitor (the codebase is already set up for it); needs the $99/yr Apple Developer Program
+- **AI drill generator:** brought back behind a small server-side proxy so the API key stays private
+- **Court diagrams** for each drill
+- **Cloud sync** so plans follow you across devices and coaches on the same team can share them
