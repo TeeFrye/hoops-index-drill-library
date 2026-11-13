@@ -192,7 +192,7 @@ export default function App() {
           <nav className="tabbar" aria-label="Main">
             {TABS.map((t) => (
               <button key={t.id} className={`tab${tab === t.id ? " active" : ""}`} onClick={() => onTabPress(t.id)} aria-current={tab === t.id ? "page" : undefined}>
-                <Icon name={t.icon} size={25} stroke={tab === t.id ? 2.2 : 1.9} fill={t.id === "saved" && tab === t.id} />
+                <Icon name={t.icon} size={24} weight={tab === t.id ? "fill" : "regular"} />
                 {t.label}
               </button>
             ))}

@@ -111,7 +111,9 @@ export function generatePlan(input: GeneratorInput): PlanItem[] {
   return out;
 }
 
+const SHORT: Partial<Record<Focus, string>> = { "Ball Handling": "Handles", "Team Concepts": "Team", Rebounding: "Boards" };
+
 export function defaultPlanName(input: Pick<GeneratorInput, "focus" | "minutes">) {
-  const f = input.focus.length ? input.focus.slice(0, 2).join(" + ") : "Balanced";
-  return `${f} · ${input.minutes} min`;
+  if (!input.focus.length) return "Balanced practice";
+  return input.focus.slice(0, 3).map((f) => SHORT[f] ?? f).join(" + ");
 }

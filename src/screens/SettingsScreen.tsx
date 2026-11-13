@@ -35,15 +35,15 @@ export function SettingsScreen() {
   };
 
   return (
-    <Screen title="Settings" large>
+    <Screen title="Settings" large subtitle="Your team, your practice clock, your data.">
       <div className="section-header">My team</div>
       <div className="group">
         <div className="row">
-          <Icon name="users" size={20} style={{ color: "var(--accent)" }} />
+          <span className="row-icon"><Icon name="users" size={20} weight="duotone" /></span>
           <div className="row-main">Usual roster</div>
           <Stepper value={s.players} min={1} max={30} onChange={(v) => set({ players: v })} />
         </div>
-        <div className="row" style={{ display: "block", "--inset": "16px" } as React.CSSProperties}>
+        <div className="row" style={{ display: "block" }}>
           <div style={{ marginBottom: 10 }}>Age group</div>
           <Segmented options={AGE_GROUPS} value={s.ageGroup} onChange={(v) => set({ ageGroup: v })} labels={{ "U8–U10": "U8–10", "U10–U12": "U10–12", "U12–U14": "U12–14" }} />
         </div>
@@ -53,7 +53,7 @@ export function SettingsScreen() {
       <div className="section-header">Practice mode</div>
       <div className="group">
         <div className="row">
-          <Icon name="volume" size={20} style={{ color: "var(--accent)" }} />
+          <span className="row-icon"><Icon name="volume" size={20} weight="duotone" /></span>
           <div className="row-main">
             <div>Whistle beeps</div>
             <div className="row-sub">Beep at 30 seconds left and when time’s up</div>
@@ -70,14 +70,14 @@ export function SettingsScreen() {
       <div className="section-header">Your data</div>
       <div className="group">
         <button className="row" onClick={download}>
-          <Icon name="download" size={20} style={{ color: "var(--accent)" }} />
+          <span className="row-icon"><Icon name="download" size={20} weight="duotone" /></span>
           <div className="row-main">Back up practices & saved drills</div>
-          <Icon name="chev" size={18} className="chev" stroke={2.4} />
+          <Icon name="chev" size={18} weight="bold" className="chev" />
         </button>
-        <button className="row" style={{ "--inset": "48px" } as React.CSSProperties} onClick={() => fileRef.current?.click()}>
-          <Icon name="upload" size={20} style={{ color: "var(--accent)" }} />
+        <button className="row" onClick={() => fileRef.current?.click()}>
+          <span className="row-icon"><Icon name="upload" size={20} weight="duotone" /></span>
           <div className="row-main">Restore from backup</div>
-          <Icon name="chev" size={18} className="chev" stroke={2.4} />
+          <Icon name="chev" size={18} weight="bold" className="chev" />
         </button>
       </div>
       <input ref={fileRef} type="file" accept="application/json,.json" hidden onChange={onImport} />

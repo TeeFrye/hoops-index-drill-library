@@ -3,10 +3,12 @@ import { DRILLS } from "../data";
 import { AGE_GROUPS, FOCUS_AREAS, SKILLS, type AgeGroup, type Focus, type Skill } from "../types";
 import { EMPTY_FILTERS, activeFilterCount, filterDrills, type DrillFilters } from "../lib/drills";
 import { favoritesStore, settingsStore } from "../store";
-import { Screen, Segmented, Sheet, Stepper, Toggle, useNav } from "../components/ui";
-import { FOCUS_META, Icon } from "../components/Icon";
+import { Banner, Screen, Segmented, Sheet, Stepper, Toggle, useNav } from "../components/ui";
+import { FOCUS_ICON, Icon } from "../components/Icon";
 import { DrillRow } from "../components/DrillRow";
 import { InstallTip } from "../components/InstallTip";
+
+const FOCUS_COUNTS = DRILLS.reduce<Record<string, number>>((acc, d) => ((acc[d.focus] = (acc[d.focus] ?? 0) + 1), acc), {});
 
 export function DrillsScreen() {
   const nav = useNav();
@@ -18,69 +20,70 @@ export function DrillsScreen() {
   const nActive = activeFilterCount(f);
 
   const toggleFocus = (x: Focus) => setF((p) => ({ ...p, focus: p.focus.includes(x) ? p.focus.filter((y) => y !== x) : [...p.focus, x] }));
+  const anything = nActive > 0 || f.focus.length > 0 || !!f.query;
 
   return (
     <Screen
       title="Drills"
       large
-      subtitle={`${DRILLS.length} drills for youth coaches`}
+      subtitle={`${DRILLS.length} drills built for the sideline. Filter by roster, age and skill.`}
       header={
         <>
           <InstallTip />
-          <label className="search">
-            <Icon name="search" size={18} stroke={2.4} />
-            <input
-              type="search"
-              placeholder="Search drills, skills, cues"
-              value={f.query}
-              onChange={(e) => setF((p) => ({ ...p, query: e.target.value }))}
-              enterKeyHint="search"
-              autoCorrect="off"
-            />
-            {f.query && (
-              <button className="search-clear" onClick={() => setF((p) => ({ ...p, query: "" }))} aria-label="Clear search">
-                <Icon name="xCircle" size={18} />
-              </button>
-            )}
-          </label>
-          <div className="chips chrome">
-            <button className={`chip${nActive ? " on" : ""}`} onClick={() => setSheet(true)}>
-              <Icon name="sliders" size={16} stroke={2.2} /> Filters
+          <div className="toolbar">
+            <label className="search">
+              <Icon name="search" size={19} weight="bold" />
+              <input
+                type="search"
+                placeholder="Search drills, skills, cues"
+                value={f.query}
+                onChange={(e) => setF((p) => ({ ...p, query: e.target.value }))}
+                enterKeyHint="search"
+                autoCorrect="off"
+              />
+              {f.query && (
+                <button className="search-clear" onClick={() => setF((p) => ({ ...p, query: "" }))} aria-label="Clear search">
+                  <Icon name="xCircle" size={20} fill />
+                </button>
+              )}
+            </label>
+            <button className={`icon-btn${nActive ? " on" : ""}`} onClick={() => setSheet(true)} aria-label="Filters">
+              <Icon name="sliders" size={22} weight="bold" />
               {nActive > 0 && <span className="badge">{nActive}</span>}
             </button>
-            {FOCUS_AREAS.map((x) => (
-              <button
-                key={x}
-                className={`chip${f.focus.includes(x) ? " on" : ""}`}
-                style={{ "--chip-color": FOCUS_META[x].color } as React.CSSProperties}
-                onClick={() => toggleFocus(x)}
-              >
-                <span className="dot" />
-                {x}
-              </button>
-            ))}
+          </div>
+          <div className="section-header" style={{ paddingBottom: 0 }}>
+            <span>Focus areas</span>
+            {f.focus.length > 0 && <button onClick={() => setF((p) => ({ ...p, focus: [] }))}>Show all</button>}
+          </div>
+          <div className="rafters-wrap">
+            <div className="rafters chrome">
+              {FOCUS_AREAS.map((x, i) => (
+                <Banner key={x} index={i} label={x} sub={`${FOCUS_COUNTS[x] ?? 0} drills`} icon={FOCUS_ICON[x]} on={f.focus.includes(x)} onClick={() => toggleFocus(x)} />
+              ))}
+            </div>
           </div>
         </>
       }
     >
       <div className="count-line">
-        <span>
+        <b>
           {results.length} {results.length === 1 ? "drill" : "drills"}
-        </span>
-        {(nActive > 0 || f.focus.length > 0 || f.query) && <button onClick={() => setF(EMPTY_FILTERS)}>Clear all</button>}
+        </b>
+        {anything && <button onClick={() => setF(EMPTY_FILTERS)}>Clear all</button>}
       </div>
       {results.length ? (
-        <div className="group">
+        <div className="card-list">
           {results.map((d) => (
             <DrillRow key={d.id} drill={d} fav={favs.includes(String(d.id))} onClick={() => nav.push({ name: "drill", id: d.id })} />
           ))}
         </div>
       ) : (
         <div className="empty">
-          <Icon name="search" size={44} stroke={1.6} />
+          <Icon name="ball" size={52} weight="duotone" />
           <h3>No drills match</h3>
           <p>Try removing a filter or searching for something broader.</p>
-          <button className="btn secondary" style={{ maxWidth: 200, margin: "16px auto 0" }} onClick={() => setF(EMPTY_FILTERS)}>
+          <button className="btn secondary" style={{ maxWidth: 220, margin: "18px auto 0" }} onClick={() => setF(EMPTY_FILTERS)}>
             Reset filters
           </button>
         </div>
@@ -116,7 +119,7 @@ function FilterSheet({ open, onClose, value: f, onChange, count }: { open: boole
       <div className="field-label">My team</div>
       <div className="field-pad">
         <button className="btn secondary" onClick={() => set({ players: settings.players, age: settings.ageGroup })}>
-          <Icon name="users" size={18} /> Use my team · {settings.players} players · {settings.ageGroup}
+          <Icon name="users" size={20} weight="bold" /> My team · {settings.players} players · {settings.ageGroup}
         </button>
       </div>
 

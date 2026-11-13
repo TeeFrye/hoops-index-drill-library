@@ -5,7 +5,7 @@ import { deletePlan, plansStore, savePlan, uid } from "../store";
 import { EMPTY_FILTERS, filterDrills, formatMinutes } from "../lib/drills";
 import { generatePlan } from "../lib/generator";
 import { Screen, Sheet, Stepper, useNav, useToast } from "../components/ui";
-import { FOCUS_META, FocusBadge, Icon } from "../components/Icon";
+import { FOCUS_ICON, FocusBadge, Icon } from "../components/Icon";
 import { DrillRow } from "../components/DrillRow";
 import { useApp } from "../appContext";
 import { PlanTimeline, planTotal } from "./PlansScreen";
@@ -94,6 +94,18 @@ export function PlanScreen({ id }: { id: string }) {
     <Screen
       title={plan.name}
       className="has-action-bar"
+      hero={
+        <div>
+          <div className="kicker" style={{ marginBottom: 6 }}>Practice plan</div>
+          <input className="name-input" value={plan.name} onChange={(e) => savePlan({ ...plan, name: e.target.value })} aria-label="Practice name" />
+          <div className="hero-meta">
+            {formatMinutes(total)} · {plan.items.filter((i) => i.type === "drill").length} drills
+            {plan.players ? ` · ${plan.players} players` : ""}
+            {plan.ageGroup ? ` · ${plan.ageGroup}` : ""}
+          </div>
+          {plan.items.length > 0 && <PlanTimeline plan={plan} onHero />}
+        </div>
+      }
       right={
         <>
           {plan.items.length > 0 && (
@@ -102,34 +114,23 @@ export function PlanScreen({ id }: { id: string }) {
             </button>
           )}
           <button className="nav-btn icon" onClick={() => setMenu(true)} aria-label="More">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <circle cx="5" cy="12" r="2" />
-              <circle cx="12" cy="12" r="2" />
-              <circle cx="19" cy="12" r="2" />
-            </svg>
+            <Icon name="more" size={22} weight="bold" />
           </button>
         </>
       }
       footer={
         <div className="action-bar">
           <button className="btn primary" disabled={!plan.items.length} onClick={() => app.startPractice(plan.id)}>
-            <Icon name="play" size={18} /> Start practice
+            <Icon name="play" size={20} weight="fill" /> Start practice
           </button>
         </div>
       }
     >
-      <div style={{ padding: "4px 20px 6px" }}>
-        <input className="name-input" value={plan.name} onChange={(e) => savePlan({ ...plan, name: e.target.value })} aria-label="Practice name" />
-        <div style={{ color: "var(--label-2)", fontSize: 15, marginTop: 2 }}>
-          {formatMinutes(total)} · {plan.items.filter((i) => i.type === "drill").length} drills
-          {plan.players ? ` · ${plan.players} players` : ""}
-        </div>
-        {plan.items.length > 0 && <PlanTimeline plan={plan} />}
-      </div>
-
       {plan.items.length > 0 ? (
         <>
-          <div className="section-header">Schedule</div>
+          <div className="section-header">
+            <span>Schedule</span>
+          </div>
           <div className="group">
             {plan.items.map((it, i) => {
               const start = t;
@@ -140,10 +141,10 @@ export function PlanScreen({ id }: { id: string }) {
                   {editing && (
                     <div className="reorder">
                       <button onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up">
-                        <Icon name="up" size={18} stroke={2.4} />
+                        <Icon name="up" size={18} weight="bold" />
                       </button>
                       <button onClick={() => move(i, 1)} disabled={i === plan.items.length - 1} aria-label="Move down">
-                        <Icon name="down" size={18} stroke={2.4} />
+                        <Icon name="down" size={18} weight="bold" />
                       </button>
                     </div>
                   )}
@@ -151,7 +152,7 @@ export function PlanScreen({ id }: { id: string }) {
                     <FocusBadge focus={d.focus} />
                   ) : (
                     <div className="brk-badge">
-                      <Icon name="drop" size={20} />
+                      <Icon name="drop" size={22} weight="duotone" />
                     </div>
                   )}
                   <button className="row-main" style={{ textAlign: "left", minWidth: 0 }} onClick={() => d && !editing && nav.push({ name: "drill", id: d.id })}>
@@ -176,7 +177,7 @@ export function PlanScreen({ id }: { id: string }) {
         </>
       ) : (
         <div className="empty" style={{ paddingBottom: 12 }}>
-          <Icon name="clipboard" size={44} stroke={1.6} />
+          <Icon name="clipboard" size={52} weight="duotone" />
           <h3>Empty practice</h3>
           <p>Add drills from the library and they’ll show up here in order.</p>
         </div>
@@ -184,10 +185,10 @@ export function PlanScreen({ id }: { id: string }) {
 
       <div className="btn-row" style={{ marginTop: 16 }}>
         <button className="btn secondary" onClick={() => setPicker(true)}>
-          <Icon name="plus" size={20} stroke={2.6} /> Add drill
+          <Icon name="plus" size={20} weight="bold" /> Add drill
         </button>
         <button className="btn plain" onClick={addBreak}>
-          <Icon name="drop" size={18} /> Add break
+          <Icon name="drop" size={20} weight="duotone" /> Break
         </button>
       </div>
 
@@ -197,11 +198,11 @@ export function PlanScreen({ id }: { id: string }) {
         <div style={{ height: 8 }} />
         <div className="group">
           <button className="row" onClick={share}>
-            <Icon name="share" size={22} style={{ color: "var(--accent)" }} />
+            <span className="row-icon"><Icon name="share" size={20} weight="duotone" /></span>
             <div className="row-main">Share or copy as text</div>
           </button>
-          <button className="row" onClick={reshuffle} style={{ "--inset": "50px" } as React.CSSProperties}>
-            <Icon name="shuffle" size={22} style={{ color: "var(--accent)" }} />
+          <button className="row" onClick={reshuffle}>
+            <span className="row-icon"><Icon name="shuffle" size={20} weight="duotone" /></span>
             <div className="row-main">
               <div>Shuffle drills</div>
               <div className="row-sub">Rebuild with fresh drills, same focus and length</div>
@@ -209,7 +210,7 @@ export function PlanScreen({ id }: { id: string }) {
           </button>
           <button
             className="row"
-            style={{ "--inset": "50px" } as React.CSSProperties}
+           
             onClick={() => {
               const id = uid();
               savePlan({ ...plan, id, name: `${plan.name} (copy)`, createdAt: Date.now(), items: plan.items.map((it) => ({ ...it, key: uid() })) });
@@ -217,7 +218,7 @@ export function PlanScreen({ id }: { id: string }) {
               toast("Practice duplicated", "copy");
             }}
           >
-            <Icon name="copy" size={22} style={{ color: "var(--accent)" }} />
+            <span className="row-icon"><Icon name="copy" size={20} weight="duotone" /></span>
             <div className="row-main">Duplicate</div>
           </button>
         </div>
@@ -251,14 +252,14 @@ function DrillPicker({ open, onClose, plan, onAdd }: { open: boolean; onClose: (
 
   return (
     <Sheet open={open} onClose={onClose} title="Add drills" full right={<button className="nav-btn bold" onClick={onClose}>Done</button>}>
-      <label className="search" style={{ marginTop: 6 }}>
-        <Icon name="search" size={18} stroke={2.4} />
+      <label className="search" style={{ margin: "6px 16px 12px", flex: "none" }}>
+        <Icon name="search" size={19} weight="bold" />
         <input type="search" placeholder="Search drills" value={q} onChange={(e) => setQ(e.target.value)} />
       </label>
       <div className="chips chrome">
         {FOCUS_AREAS.map((x) => (
-          <button key={x} className={`chip${focus === x ? " on" : ""}`} style={{ "--chip-color": FOCUS_META[x].color } as React.CSSProperties} onClick={() => setFocus(focus === x ? null : x)}>
-            <span className="dot" />
+          <button key={x} className={`chip${focus === x ? " on" : ""}`} onClick={() => setFocus(focus === x ? null : x)}>
+            <Icon name={FOCUS_ICON[x]} size={18} weight={focus === x ? "fill" : "duotone"} />
             {x}
           </button>
         ))}
@@ -272,7 +273,7 @@ function DrillPicker({ open, onClose, plan, onAdd }: { open: boolean; onClose: (
           </span>
         </div>
       )}
-      <div className="group">
+      <div className="card-list">
         {results.map((d) => {
           const added = inPlan.has(String(d.id));
           return (
@@ -282,7 +283,7 @@ function DrillPicker({ open, onClose, plan, onAdd }: { open: boolean; onClose: (
               onClick={() => onAdd(d.id, d.duration)}
               right={
                 <span style={{ color: added ? "var(--success)" : "var(--accent)", flex: "none" }}>
-                  <Icon name={added ? "checkCircle" : "plus"} size={22} stroke={2.4} />
+                  <Icon name={added ? "checkCircle" : "plus"} size={26} weight={added ? "fill" : "bold"} />
                 </span>
               }
             />

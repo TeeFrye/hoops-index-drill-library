@@ -25,14 +25,14 @@ export function SavedScreen() {
   }[view];
 
   return (
-    <Screen title="Saved" large header={<div className="field-pad" style={{ paddingBottom: 14 }}><Segmented options={VIEWS} value={view} onChange={setView} /></div>}>
+    <Screen title="Saved" large subtitle="Your go-to drills, recent looks and notes." header={<div className="field-pad" style={{ padding: "16px 16px 14px" }}><Segmented options={VIEWS} value={view} onChange={setView} /></div>}>
       {drills.length ? (
-        <div className="group">
+        <div className="card-list">
           {drills.map((d) => (
-            <div key={d.id}>
+            <div key={d.id} style={view === "Notes" ? { background: "var(--surface)", borderRadius: 18, boxShadow: "var(--shadow)" } : undefined}>
               <DrillRow drill={d} fav={view !== "Saved" && favs.includes(String(d.id))} onClick={() => nav.push({ name: "drill", id: d.id })} />
               {view === "Notes" && (
-                <div className="row-sub" style={{ padding: "0 16px 12px 68px", whiteSpace: "normal", marginTop: -4 }}>
+                <div className="row-sub" style={{ padding: "0 16px 14px 74px", whiteSpace: "normal", marginTop: -6 }}>
                   {notes[String(d.id)]}
                 </div>
               )}
@@ -41,7 +41,7 @@ export function SavedScreen() {
         </div>
       ) : (
         <div className="empty">
-          <Icon name={empty.icon} size={44} stroke={1.6} />
+          <Icon name={empty.icon} size={52} weight="duotone" />
           <h3>{empty.title}</h3>
           <p>{empty.body}</p>
         </div>

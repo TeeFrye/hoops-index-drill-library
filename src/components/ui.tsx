@@ -24,37 +24,41 @@ export const useNav = () => useContext(NavContext);
 
 interface ScreenProps {
   title: string;
-  /** Show the iOS large title in the scroll content. */
+  /** Show the big display title inside the crimson hero. */
   large?: boolean;
   subtitle?: ReactNode;
+  /** Custom hero content (replaces the large title), e.g. a drill's name block. */
+  hero?: ReactNode;
   left?: ReactNode;
   right?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
   className?: string;
-  /** Nodes rendered directly under the large title but above the scrolling content edge. */
+  /** Content directly under the hero, before the main content. */
   header?: ReactNode;
 }
 
-export function Screen({ title, large, subtitle, left, right, children, footer, className = "", header }: ScreenProps) {
+export function Screen({ title, large, subtitle, hero, left, right, children, footer, className = "", header }: ScreenProps) {
   const nav = useNav();
   const [solid, setSolid] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const y = e.currentTarget.scrollTop;
-    const next = large ? y > 38 : y > 2;
+    const h = heroRef.current?.offsetHeight ?? 100;
+    const next = y > h - 70;
     if (next !== solid) setSolid(next);
   };
   const leftNode =
     left ??
     (nav.depth > 0 ? (
       <button className="nav-btn" onClick={nav.pop} aria-label="Back">
-        <Icon name="back" size={26} stroke={2.4} />
+        <Icon name="back" size={24} weight="bold" />
       </button>
     ) : null);
 
   return (
     <div className={`screen-inner ${className}`} style={{ display: "contents" }}>
-      <header className={`navbar chrome${solid ? " solid" : ""}${large ? "" : " inline"}`}>
+      <header className={`navbar chrome${solid ? " solid" : ""}`}>
         <div className="navbar-row">
           <div className="navbar-left">{leftNode}</div>
           <div className="navbar-title">{title}</div>
@@ -62,13 +66,46 @@ export function Screen({ title, large, subtitle, left, right, children, footer, 
         </div>
       </header>
       <div className="scroll" onScroll={onScroll}>
-        {large && <div className="large-title">{title}</div>}
-        {large && subtitle && <div className="large-sub">{subtitle}</div>}
+        <div className="hero-band" ref={heroRef}>
+          {hero ?? (
+            <>
+              {large && <h1 className="display-title">{title}</h1>}
+              {large && subtitle && <div className="display-sub">{subtitle}</div>}
+            </>
+          )}
+        </div>
+        <div className="stripe-band" aria-hidden="true" />
         {header}
         {children}
       </div>
       {footer}
     </div>
+  );
+}
+
+/* ---------------- Hanging banners (focus areas) ---------------- */
+
+export function Banner({ label, sub, icon, on, onClick, index = 0 }: { label: string; sub?: string; icon: Parameters<typeof Icon>[0]["name"]; on?: boolean; onClick?: () => void; index?: number }) {
+  return (
+    <button className={`banner${on ? " on" : ""}`} onClick={onClick} aria-pressed={on} style={{ animationDelay: `${index * 40}ms` }}>
+      <span className="banner-cords" aria-hidden="true" />
+      <svg className="banner-shape" viewBox="0 0 96 128" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <pattern id="candy" width="8" height="8" patternUnits="userSpaceOnUse">
+            <rect width="4" height="8" className="banner-stripe-a" />
+            <rect x="4" width="4" height="8" className="banner-stripe-b" />
+          </pattern>
+        </defs>
+        <path d="M0 0H96V128L48 112L0 128Z" className="banner-fill" />
+        <rect x="0" y="0" width="96" height="9" fill="url(#candy)" />
+        <path d="M6 15H90V119L48 105L6 119Z" className="banner-line" />
+      </svg>
+      <span className="banner-content">
+        <Icon name={icon} size={26} weight={on ? "fill" : "duotone"} />
+        <span className="banner-label">{label}</span>
+        {sub && <span className="banner-sub">{sub}</span>}
+      </span>
+    </button>
   );
 }
 

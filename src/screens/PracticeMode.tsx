@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { getDrill } from "../data";
 import { plansStore, settingsStore } from "../store";
 import { formatClock, formatMinutes } from "../lib/drills";
-import { FOCUS_META, Icon } from "../components/Icon";
+import { Icon } from "../components/Icon";
 
 /* ---------- Sound: short whistle-like beeps via Web Audio ---------- */
 let audioCtx: AudioContext | null = null;
@@ -113,7 +113,7 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
 
   const item = items[index];
   const drill = item?.type === "drill" ? getDrill(item.drillId) : undefined;
-  const color = drill ? FOCUS_META[drill.focus].color : "#0A84FF";
+  const color = drill ? "#e23a43" : "#e9e2d4";
   const nextItem = items[index + 1];
   const nextDrill = nextItem?.type === "drill" ? getDrill(nextItem.drillId) : undefined;
   const total = durations[index] || 1;
@@ -141,7 +141,7 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
   const totalAll = durations.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="practice" style={{ "--c": color } as React.CSSProperties} role="dialog" aria-label="Practice mode">
+    <div className="practice" role="dialog" aria-label="Practice mode">
       <div className="top chrome">
         <button
           className="nav-btn"
@@ -155,7 +155,7 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
         >
           {finished ? "Close" : confirmEnd ? "Tap to end" : "End"}
         </button>
-        <div style={{ fontSize: 15, fontWeight: 600, opacity: 0.7, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "50vw" }}>{plan.name}</div>
+        <div className="title">{plan.name}</div>
         <button className="nav-btn" onClick={addMinute} disabled={finished} style={{ fontWeight: 600 }}>
           +1 min
         </button>
@@ -166,7 +166,7 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
           const d = it.type === "drill" ? getDrill(it.drillId) : undefined;
           const fill = i < index || finished ? 1 : i === index ? 1 - frac : 0;
           return (
-            <i key={it.key} style={{ flex: durations[i], "--c": d ? FOCUS_META[d.focus].color : "#0A84FF" } as React.CSSProperties}>
+            <i key={it.key} style={{ flex: durations[i] }} title={d?.name}>
               <b style={{ transform: `scaleX(${fill})` }} />
             </i>
           );
@@ -175,12 +175,32 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
 
       {finished ? (
         <div className="done-screen">
-          <Icon name="checkCircle" size={72} stroke={1.6} style={{ color: "#30B158" }} />
-          <h1>Practice complete</h1>
-          <p style={{ opacity: 0.7, margin: 0 }}>
-            {formatMinutes(Math.round(totalAll / 60))} · {items.filter((i) => i.type === "drill").length} drills
+          <div className="victory-banner" aria-hidden="true">
+            <svg viewBox="0 0 210 280" preserveAspectRatio="none">
+              <defs>
+                <pattern id="vstripe" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <rect width="8" height="16" fill="#a3111a" />
+                  <rect x="8" width="8" height="16" fill="#fbf6ee" />
+                </pattern>
+              </defs>
+              <path d="M0 0H210V280L105 248L0 280Z" fill="#a3111a" />
+              <rect width="210" height="20" fill="url(#vstripe)" />
+              <path d="M10 30H200V266L105 236L10 266Z" fill="none" stroke="rgba(251,246,238,.6)" strokeWidth="1.5" />
+            </svg>
+            <div className="content">
+              <Icon name="trophy" size={46} weight="duotone" />
+              <div className="big">
+                Practice
+                <br />
+                complete
+              </div>
+              <div className="small">{new Date().toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}</div>
+            </div>
+          </div>
+          <p style={{ opacity: 0.75, margin: 0, fontWeight: 600 }}>
+            {formatMinutes(Math.round(totalAll / 60))} · {items.filter((i) => i.type === "drill").length} drills in the books
           </p>
-          <button className="btn primary" style={{ maxWidth: 240, marginTop: 20 }} onClick={onClose}>
+          <button className="btn primary" style={{ maxWidth: 240, marginTop: 18 }} onClick={onClose}>
             Done
           </button>
         </div>
@@ -194,8 +214,8 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
 
             <div className="ring-wrap">
               <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r={R} fill="none" stroke="rgba(255,255,255,.1)" strokeWidth="5" />
-                <circle cx="50" cy="50" r={R} fill="none" stroke={color} strokeWidth="5" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - frac)} style={{ transition: running ? "stroke-dashoffset 0.2s linear" : "none" }} />
+                <circle cx="50" cy="50" r={R} fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="6" />
+                <circle cx="50" cy="50" r={R} fill="none" stroke={color} strokeWidth="6" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - frac)} style={{ transition: running ? "stroke-dashoffset 0.2s linear" : "none" }} />
               </svg>
               <div className="clock">
                 <b>{formatClock(remaining)}</b>
@@ -215,7 +235,7 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
             )}
             {drill && (
               <details className="cue-card">
-                <summary style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.06em", color: "rgba(255,255,255,.55)", fontWeight: 700 }}>Setup & steps</summary>
+                <summary>Setup & steps</summary>
                 <p style={{ margin: "8px 0" }}>{drill.setup}</p>
                 <ol>
                   {drill.steps.map((s, i) => (
@@ -237,13 +257,13 @@ export function PracticeMode({ planId, onClose }: { planId: string; onClose: () 
 
           <div className="controls chrome">
             <button className="ctrl" onClick={() => goTo(index - 1, running)} disabled={index === 0} aria-label="Previous">
-              <Icon name="prev" size={22} stroke={2} />
+              <Icon name="prev" size={24} weight="fill" />
             </button>
             <button className="ctrl main" onClick={toggle} aria-label={running ? "Pause" : "Start"}>
-              <Icon name={running ? "pause" : "play"} size={32} style={running ? undefined : { marginLeft: 4 }} />
+              <Icon name={running ? "pause" : "play"} size={34} weight="fill" style={running ? undefined : { marginLeft: 3 }} />
             </button>
             <button className="ctrl" onClick={() => goTo(index + 1, running)} aria-label="Next">
-              <Icon name="next" size={22} stroke={2} />
+              <Icon name="next" size={24} weight="fill" />
             </button>
           </div>
         </>
