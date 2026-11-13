@@ -3,7 +3,8 @@ import { getDrill } from "../data";
 import { favoritesStore, markRecent, notesStore, plansStore, savePlan, toggleFavorite, uid, idKey } from "../store";
 import { ageLabel, formatMinutes, playersLabel } from "../lib/drills";
 import { Screen, Sheet, useToast } from "../components/ui";
-import { FOCUS_META, FocusBadge, Icon } from "../components/Icon";
+import { FocusBadge, Icon } from "../components/Icon";
+import { SkillPip } from "../components/DrillRow";
 import { useApp } from "../appContext";
 import type { Drill } from "../types";
 
@@ -21,13 +22,31 @@ export function DrillDetailScreen({ id }: { id: string | number }) {
   if (!drill) return <Screen title="Drill">Drill not found.</Screen>;
   const k = idKey(drill.id);
   const isFav = favs.includes(k);
-  const c = FOCUS_META[drill.focus]?.color;
-  const style = { "--c": c } as React.CSSProperties;
 
   return (
     <Screen
       title={drill.name}
       className="has-action-bar"
+      hero={
+        <div className="drill-hero">
+          <div className="top">
+            <FocusBadge focus={drill.focus} large inverse />
+            <div className="kicker">{drill.focus}</div>
+          </div>
+          <h1>{drill.name}</h1>
+          <div className="tags-row">
+            <span className="hero-pill">
+              <Icon name="timer" size={14} weight="bold" /> {drill.duration} min
+            </span>
+            <span className="hero-pill">{drill.skill}</span>
+            {drill.competitive && (
+              <span className="hero-pill">
+                <Icon name="trophy" size={14} weight="fill" /> Competitive
+              </span>
+            )}
+          </div>
+        </div>
+      }
       right={
         <button
           className="nav-btn icon"
@@ -37,47 +56,36 @@ export function DrillDetailScreen({ id }: { id: string | number }) {
             toast(isFav ? "Removed from Saved" : "Saved", isFav ? "x" : "star");
           }}
         >
-          <Icon name="star" size={24} fill={isFav} style={isFav ? { color: "#FFB400" } : undefined} />
+          <Icon name="star" size={22} weight={isFav ? "fill" : "bold"} style={isFav ? { color: "#ffc93c" } : undefined} />
         </button>
       }
       footer={
-        <div className="action-bar" style={style}>
+        <div className="action-bar">
           <button className="btn primary" onClick={() => setAddOpen(true)}>
-            <Icon name="plus" size={20} stroke={2.6} /> Add to practice
+            <Icon name="plus" size={20} weight="bold" /> Add to practice
           </button>
         </div>
       }
     >
-      <div style={style}>
-        <div className="hero">
-          <FocusBadge focus={drill.focus} large />
-          <div>
-            <div className="kicker">
-              {drill.focus}
-              {drill.competitive ? " · Competitive" : ""}
-            </div>
-            <h1>{drill.name}</h1>
-          </div>
-        </div>
-
+      <div>
         <div className="stats">
           <div className="stat">
-            <div className="k">Time</div>
-            <div className="v">{drill.duration}m</div>
+            <div className="v">{drill.duration}</div>
+            <div className="k">Minutes</div>
           </div>
           <div className="stat">
-            <div className="k">Players</div>
             <div className="v">{playersLabel(drill)}</div>
+            <div className="k">Players</div>
           </div>
           <div className="stat">
+            <div className="v sm">{ageLabel(drill)}</div>
             <div className="k">Ages</div>
-            <div className="v">{ageLabel(drill).replace("U14+", "14+")}</div>
           </div>
           <div className="stat">
-            <div className="k">Level</div>
-            <div className="v" style={{ fontSize: 14, paddingTop: 2 }}>
-              {drill.skill}
+            <div className="v sm" style={{ display: "flex", justifyContent: "center" }}>
+              <SkillPip skill={drill.skill} />
             </div>
+            <div className="k">{drill.skill}</div>
           </div>
         </div>
 
@@ -113,7 +121,7 @@ export function DrillDetailScreen({ id }: { id: string | number }) {
               <ul className="bullets">
                 {drill.cues.map((s, i) => (
                   <li key={i}>
-                    <Icon name="bolt" size={16} fill stroke={0} />
+                    <Icon name="bolt" size={18} weight="fill" />
                     <span>{s}</span>
                   </li>
                 ))}
@@ -129,7 +137,7 @@ export function DrillDetailScreen({ id }: { id: string | number }) {
               <ul className="bullets">
                 {drill.variations.map((s, i) => (
                   <li key={i}>
-                    <Icon name="shuffle" size={16} stroke={2.4} />
+                    <Icon name="shuffle" size={18} weight="bold" />
                     <span>{s}</span>
                   </li>
                 ))}
@@ -178,7 +186,7 @@ function AddToPlanSheet({ open, onClose, drill }: { open: boolean; onClose: () =
       <div style={{ height: 8 }} />
       <div className="group">
         <button className="row" onClick={createNew} style={{ color: "var(--accent)" }}>
-          <Icon name="plus" size={22} stroke={2.4} />
+          <span className="row-icon"><Icon name="plus" size={20} weight="bold" /></span>
           <div className="row-main" style={{ fontWeight: 600 }}>
             New practice with this drill
           </div>
@@ -192,7 +200,7 @@ function AddToPlanSheet({ open, onClose, drill }: { open: boolean; onClose: () =
             const already = p.items.some((it) => it.type === "drill" && String(it.drillId) === String(drill.id));
             return (
               <button className="row" key={p.id} onClick={() => addTo(p.id)}>
-                <Icon name="clipboard" size={22} style={{ color: "var(--label-2)" }} />
+                <span className="row-icon"><Icon name="clipboard" size={20} weight="duotone" /></span>
                 <div className="row-main">
                   <div className="row-title">{p.name}</div>
                   <div className="row-sub">

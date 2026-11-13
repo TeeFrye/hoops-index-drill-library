@@ -5,16 +5,15 @@ import { plansStore, savePlan, settingsStore, uid } from "../store";
 import { formatMinutes } from "../lib/drills";
 import { defaultPlanName, generatePlan } from "../lib/generator";
 import { Screen, Segmented, Sheet, Stepper, Toggle, useNav } from "../components/ui";
-import { FOCUS_META, Icon } from "../components/Icon";
+import { FOCUS_ICON, Icon } from "../components/Icon";
 import { useApp } from "../appContext";
 
-export function PlanTimeline({ plan }: { plan: Plan }) {
+export function PlanTimeline({ plan, onHero }: { plan: Plan; onHero?: boolean }) {
   return (
-    <div className="timeline">
-      {plan.items.map((it) => {
-        const d = it.type === "drill" ? getDrill(it.drillId) : undefined;
-        return <i key={it.key} className={it.type === "break" ? "brk" : ""} style={{ flex: it.minutes, "--c": d ? FOCUS_META[d.focus]?.color : undefined } as React.CSSProperties} />;
-      })}
+    <div className={`timeline${onHero ? " on-hero" : ""}`}>
+      {plan.items.map((it) => (
+        <i key={it.key} className={it.type === "break" ? "brk" : ""} style={{ flex: it.minutes }} title={it.type === "drill" ? getDrill(it.drillId)?.name : "Break"} />
+      ))}
     </div>
   );
 }
@@ -40,17 +39,17 @@ export function PlansScreen() {
       subtitle="Plan it in the parking lot. Run it from the sideline."
       right={
         <button className="nav-btn icon" onClick={newBlank} aria-label="New blank practice">
-          <Icon name="plus" size={26} stroke={2.4} />
+          <Icon name="plus" size={22} weight="bold" />
         </button>
       }
     >
-      <button className="hero-cta" onClick={() => setGen(true)}>
-        <h3>Build a practice for me</h3>
-        <p>Pick your time, roster and focus. Get a full plan with warm-up, skill blocks and a game to finish.</p>
-        <svg className="ball" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.4">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M3 12h18M12 3v18M5.6 5.6c2.3 1.7 3.6 4 3.6 6.4s-1.3 4.7-3.6 6.4M18.4 5.6c-2.3 1.7-3.6 4-3.6 6.4s1.3 4.7 3.6 6.4" />
-        </svg>
+      <button className="cta" onClick={() => setGen(true)}>
+        <div className="kicker" style={{ color: "#ff6b72", opacity: 1, marginBottom: 6 }}>Game plan</div>
+        <h3>Build my practice</h3>
+        <p>Time, roster, focus. Get warm-up, skill blocks and a game to finish.</p>
+        <span className="go">
+          <Icon name="sparkle" size={18} weight="fill" /> Build it
+        </span>
       </button>
 
       <div className="section-header">
@@ -59,37 +58,35 @@ export function PlansScreen() {
       </div>
 
       {plans.length === 0 ? (
-        <div className="empty" style={{ paddingTop: 16 }}>
-          <Icon name="clipboard" size={44} stroke={1.6} />
+        <div className="empty" style={{ paddingTop: 12 }}>
+          <Icon name="clipboard" size={52} weight="duotone" />
           <h3>No practices yet</h3>
           <p>Build one above, or tap “Add to practice” on any drill.</p>
         </div>
       ) : (
-        plans.map((p) => {
-          const drills = p.items.filter((i) => i.type === "drill").length;
-          return (
-            <div key={p.id} style={{ position: "relative" }}>
-              <button className="plan-card" onClick={() => nav.push({ name: "plan", id: p.id })}>
-                <h3 style={{ paddingRight: 56 }}>{p.name}</h3>
-                <div className="sub">
-                  {formatMinutes(planTotal(p))} · {drills} {drills === 1 ? "drill" : "drills"}
-                  {p.players ? ` · ${p.players} players` : ""}
-                  {p.ageGroup ? ` · ${p.ageGroup}` : ""}
-                </div>
-                {p.items.length > 0 && <PlanTimeline plan={p} />}
-              </button>
-              {p.items.length > 0 && (
-                <button
-                  aria-label={`Start ${p.name}`}
-                  onClick={() => app.startPractice(p.id)}
-                  style={{ position: "absolute", right: 30, top: 14, width: 40, height: 40, borderRadius: 20, background: "var(--accent)", color: "#fff", display: "grid", placeItems: "center" }}
-                >
-                  <Icon name="play" size={18} style={{ marginLeft: 2 }} />
+        <div className="plan-list">
+          {plans.map((p) => {
+            const drills = p.items.filter((i) => i.type === "drill").length;
+            return (
+              <div key={p.id} style={{ position: "relative" }}>
+                <button className="plan-card" onClick={() => nav.push({ name: "plan", id: p.id })}>
+                  <h3>{p.name}</h3>
+                  <div className="sub">
+                    {formatMinutes(planTotal(p))} · {drills} {drills === 1 ? "drill" : "drills"}
+                    {p.players ? ` · ${p.players} players` : ""}
+                    {p.ageGroup ? ` · ${p.ageGroup}` : ""}
+                  </div>
+                  {p.items.length > 0 && <PlanTimeline plan={p} />}
                 </button>
-              )}
-            </div>
-          );
-        })
+                {p.items.length > 0 && (
+                  <button className="play-fab" aria-label={`Start ${p.name}`} onClick={() => app.startPractice(p.id)}>
+                    <Icon name="play" size={20} weight="fill" />
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
       <GeneratorSheet open={gen} onClose={() => setGen(false)} onCreated={(id) => nav.push({ name: "plan", id })} />
     </Screen>
@@ -129,7 +126,7 @@ export function GeneratorSheet({ open, onClose, onCreated }: { open: boolean; on
       <div className="field-label">Team</div>
       <div className="group">
         <div className="row">
-          <Icon name="users" size={20} style={{ color: "var(--label-2)" }} />
+          <span className="row-icon"><Icon name="users" size={20} weight="duotone" /></span>
           <div className="row-main">Players</div>
           <Stepper value={players} min={1} max={30} onChange={setPlayers} />
         </div>
@@ -146,8 +143,8 @@ export function GeneratorSheet({ open, onClose, onCreated }: { open: boolean; on
       <div className="field-label">Focus on (up to 3)</div>
       <div className="wrap-chips">
         {pickable.map((f) => (
-          <button key={f} className={`chip${focus.includes(f) ? " on" : ""}`} style={{ "--chip-color": FOCUS_META[f].color } as React.CSSProperties} onClick={() => toggle(f)}>
-            <span className="dot" />
+          <button key={f} className={`chip${focus.includes(f) ? " on" : ""}`} onClick={() => toggle(f)}>
+            <Icon name={FOCUS_ICON[f]} size={18} weight={focus.includes(f) ? "fill" : "duotone"} />
             {f}
           </button>
         ))}
@@ -156,12 +153,12 @@ export function GeneratorSheet({ open, onClose, onCreated }: { open: boolean; on
       <div className="field-label">Options</div>
       <div className="group">
         <div className="row">
-          <Icon name="drop" size={20} style={{ color: "#0A84FF" }} />
+          <span className="row-icon"><Icon name="drop" size={20} weight="duotone" /></span>
           <div className="row-main">Water breaks</div>
           <Toggle label="Water breaks" on={breaks} onChange={setBreaks} />
         </div>
-        <div className="row" style={{ "--inset": "48px" } as React.CSSProperties}>
-          <Icon name="heart" size={20} style={{ color: FOCUS_META.Conditioning.color }} />
+        <div className="row">
+          <span className="row-icon"><Icon name="heart" size={20} weight="duotone" /></span>
           <div className="row-main">Conditioning block</div>
           <Toggle label="Conditioning block" on={cond} onChange={setCond} />
         </div>
@@ -170,7 +167,7 @@ export function GeneratorSheet({ open, onClose, onCreated }: { open: boolean; on
 
       <div className="field-pad" style={{ marginTop: 20 }}>
         <button className="btn primary" onClick={build}>
-          <Icon name="sparkle" size={20} stroke={2.4} /> Build {minutes}-minute practice
+          <Icon name="sparkle" size={20} weight="fill" /> Build {minutes}-min practice
         </button>
       </div>
     </Sheet>
