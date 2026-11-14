@@ -6,7 +6,7 @@ import { favoritesStore, settingsStore } from "../store";
 import { Banner, Screen, Segmented, Sheet, Stepper, Toggle, useNav } from "../components/ui";
 import { FOCUS_ICON, Icon } from "../components/Icon";
 import { DrillRow } from "../components/DrillRow";
-import { InstallTip } from "../components/InstallTip";
+import { InstallCard } from "../components/Install";
 
 const FOCUS_COUNTS = DRILLS.reduce<Record<string, number>>((acc, d) => ((acc[d.focus] = (acc[d.focus] ?? 0) + 1), acc), {});
 
@@ -29,7 +29,7 @@ export function DrillsScreen() {
       subtitle={`${DRILLS.length} drills built for the sideline. Filter by roster, age and skill.`}
       header={
         <>
-          <InstallTip />
+          <InstallCard />
           <div className="toolbar">
             <label className="search">
               <Icon name="search" size={19} weight="bold" />

@@ -49,6 +49,9 @@ import { UsersFour } from "@phosphor-icons/react/dist/csr/UsersFour";
 import { UsersThree } from "@phosphor-icons/react/dist/csr/UsersThree";
 import { X } from "@phosphor-icons/react/dist/csr/X";
 import { XCircle } from "@phosphor-icons/react/dist/csr/XCircle";
+import { PlusSquare } from "@phosphor-icons/react/dist/csr/PlusSquare";
+import { WifiSlash } from "@phosphor-icons/react/dist/csr/WifiSlash";
+import { Compass } from "@phosphor-icons/react/dist/csr/Compass";
 import type { Icon as PhosphorIcon, IconWeight } from "@phosphor-icons/react";
 import type { Focus } from "../types";
 
@@ -104,6 +107,9 @@ const ICONS = {
   cone: TrafficCone,
   more: DotsThree,
   trophy: Trophy,
+  addHome: PlusSquare,
+  offline: WifiSlash,
+  compass: Compass,
 } satisfies Record<string, PhosphorIcon>;
 
 export type IconName = keyof typeof ICONS;

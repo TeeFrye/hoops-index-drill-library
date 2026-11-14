@@ -4,6 +4,7 @@ import { AGE_GROUPS, type ThemePref } from "../types";
 import { exportData, importData, resetAll, settingsStore } from "../store";
 import { Screen, Segmented, Stepper, Toggle, useToast } from "../components/ui";
 import { Icon } from "../components/Icon";
+import { useInstall } from "../components/Install";
 
 const THEMES = ["system", "light", "dark"] as const;
 
@@ -11,6 +12,7 @@ export function SettingsScreen() {
   const s = settingsStore.use();
   const toast = useToast();
   const fileRef = useRef<HTMLInputElement>(null);
+  const { mode: installMode, install, sheet: installSheet } = useInstall();
   const set = (patch: Partial<typeof s>) => settingsStore.set((p) => ({ ...p, ...patch }));
 
   const download = () => {
@@ -36,6 +38,33 @@ export function SettingsScreen() {
 
   return (
     <Screen title="Settings" large subtitle="Your team, your practice clock, your data.">
+      <div className="section-header">App</div>
+      <div className="group">
+        {installMode === "installed" ? (
+          <div className="row">
+            <span className="row-icon">
+              <Icon name="checkCircle" size={20} weight="duotone" />
+            </span>
+            <div className="row-main">
+              <div>Installed</div>
+              <div className="row-sub">Running from your home screen. Works offline.</div>
+            </div>
+          </div>
+        ) : (
+          <button className="row" onClick={install}>
+            <span className="row-icon">
+              <Icon name="addHome" size={20} weight="duotone" />
+            </span>
+            <div className="row-main">
+              <div>Install the app</div>
+              <div className="row-sub">Add to your home screen. Free, works offline.</div>
+            </div>
+            <Icon name="chev" size={18} weight="bold" className="chev" />
+          </button>
+        )}
+      </div>
+      {installSheet}
+
       <div className="section-header">My team</div>
       <div className="group">
         <div className="row">
