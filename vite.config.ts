@@ -31,6 +31,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
+        // The link-preview image is only fetched by other sites, never by the app.
+        globIgnores: ["**/og-image.png"],
       },
     }),
   ],
