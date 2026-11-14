@@ -3,6 +3,7 @@ import { AppContext, type AppActions, type Tab } from "./appContext";
 import { Icon, type IconName } from "./components/Icon";
 import { NavContext, ToastHost, type Route } from "./components/ui";
 import { settingsStore } from "./store";
+import { embedTheme } from "./lib/embed";
 import { DrillsScreen } from "./screens/DrillsScreen";
 import { DrillDetailScreen } from "./screens/DrillDetailScreen";
 import { PlansScreen } from "./screens/PlansScreen";
@@ -45,7 +46,8 @@ function renderRoute(r: Route) {
 }
 
 function useTheme() {
-  const { theme } = settingsStore.use();
+  const { theme: saved } = settingsStore.use();
+  const theme = embedTheme ?? saved;
   useEffect(() => {
     const root = document.documentElement;
     if (theme === "system") root.removeAttribute("data-theme");

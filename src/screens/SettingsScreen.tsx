@@ -5,6 +5,7 @@ import { exportData, importData, resetAll, settingsStore } from "../store";
 import { Screen, Segmented, Stepper, Toggle, useToast } from "../components/ui";
 import { Icon } from "../components/Icon";
 import { useInstall } from "../components/Install";
+import { isEmbed } from "../lib/embed";
 
 const THEMES = ["system", "light", "dark"] as const;
 
@@ -38,6 +39,8 @@ export function SettingsScreen() {
 
   return (
     <Screen title="Settings" large subtitle="Your team, your practice clock, your data.">
+      {!isEmbed && (
+        <>
       <div className="section-header">App</div>
       <div className="group">
         {installMode === "installed" ? (
@@ -64,6 +67,8 @@ export function SettingsScreen() {
         )}
       </div>
       {installSheet}
+        </>
+      )}
 
       <div className="section-header">My team</div>
       <div className="group">

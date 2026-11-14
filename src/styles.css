@@ -451,10 +451,11 @@ button.row:active { background: var(--fill); }
 .practice {
   position: fixed; inset: 0; z-index: 60; color: #fbf6ee; display: flex; flex-direction: column;
   background: radial-gradient(120% 60% at 50% 0%, #3a0a0d 0%, #120d0c 58%);
-  padding: 0 0 calc(var(--safe-bottom) + 16px);
+  padding: var(--safe-top) 0 calc(var(--safe-bottom) + 16px);
   animation: sheet-up 0.42s cubic-bezier(0.2, 0.9, 0.25, 1) both;
 }
-.practice::before { content: ""; height: calc(var(--safe-top) + 8px); background: repeating-linear-gradient(90deg, #a3111a 0 9px, #fbf6ee 9px 18px); flex: none; }
+/* Thin candy stripe just below the status bar; the status bar itself stays dark so the time and battery stay readable. */
+.practice::before { content: ""; height: 8px; background: repeating-linear-gradient(90deg, #a3111a 0 9px, #fbf6ee 9px 18px); flex: none; }
 .practice .top { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px 0; }
 .practice .top .nav-btn { color: #fbf6ee; background: rgba(255,255,255,.1); }
 .practice .top .title { font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 46vw; }

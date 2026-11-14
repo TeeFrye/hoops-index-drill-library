@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { promptInstall, useInstallMode, type InstallMode } from "../lib/install";
+import { isEmbed } from "../lib/embed";
 import { Sheet, useToast } from "./ui";
 import { Icon } from "./Icon";
 
@@ -34,7 +35,7 @@ export function InstallCard() {
       return false;
     }
   });
-  if (mode === "installed" || dismissed) return null;
+  if (mode === "installed" || dismissed || isEmbed) return null;
 
   const dismiss = () => {
     setDismissed(true);
